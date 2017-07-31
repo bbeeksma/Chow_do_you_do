@@ -1,0 +1,29 @@
+{
+  "name": "chow_do_you_do",
+  "version": "1.0.0",
+  "description": "recipes based on food restrictions and nutrition",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bbeeksma/Chow_do_you_do.git"
+  },
+  "author": "Benjamin Beeksma, Dustin Yelland, Mitchell Brock, David Becker, Jaosn Logan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bbeeksma/Chow_do_you_do/issues"
+  },
+  "homepage": "https://github.com/bbeeksma/Chow_do_you_do#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "express-request-proxy": "^2.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0",
+    "opn-cli": "^3.1.0"
+  }
+}
