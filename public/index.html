@@ -1,28 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>About Me</title>
+  <title>Chow Do You Do?</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="vendor/reset.css" type="text/css"/>
   <link rel="stylesheet" href="about.css" type="text/css"/>
+  <link rel="stylesheet" href="styles.css" type="text/css"/>
   <script src="https://developer.edamam.com/attribution/badge.js"></script>
 </head>
 <body>
-  <h1>Chow Do You Do?</h1>
-  <nav>
-    <ul>
-      <li>Home</li>
-      <li>Search Recipes</li>
-      <li>Build Your own Recipe</li>
-      <li>About Us</li>
-    </ul>
-  </nav>
+  <header>
+    <i class="fa fa-bars clickable toggleMenu" aria-hidden="true"></i>
+    <nav class='mainNav'>
+      <ul class='navList'>
+        <li>
+          <a href="/" data-content='home'>Home</a>
+        </li>
+        <li>
+          <a href="/recipes" data-content='recipes'>Recipes</a>
+        </li>
+        <li>
+          <a href="/nutrition" data-content='nutrition'>Nutrition</a>
+        </li>
+        <li>
+          <a href="/about" data-content='about'>About</a>
+        </li>
+      </ul>
+    </nav>
+    <div class='logo'>
+      <h1>Chow Do You Do?</h1>
+    </div>
+
+    <i class="fa fa-user-circle clickable" aria-hidden="true"></i>
+
+  </header>
 
   <section class="sign-in">
     <form></form>
   </section>
 
-  <section class="tab-content home">
+  <section id="home" class="tab-content home">
     <div class="button-wrap">
       <button type="button">This is a button</button>
     </div>
@@ -42,7 +59,7 @@
     </div>
   </section>
 
-  <section class="tab-content recipe">
+  <section id="recipe" class="tab-content recipe">
     <div class="drop-down off"></div>
     <!--dropdown menu content here-->
     <div class="recipe-result-wrap">
@@ -52,12 +69,12 @@
     </div>
   </section>
 
-  <section class="tab-content nutrition">
+  <section id="nutrition" class="tab-content nutrition">
     <!--Stretch goal-->
   </section>
 
-  <section class="tab-content about">
-    <div id="benjamin"><img src="assets/benjamin.JPG" />
+  <section id="about" class="tab-content about">
+    <div><img src="assets/benjamin.JPG" />
       <p>Contact:direwolf_85@yahoo.com</p><p>GitHub:<a href="https://github.com/bbeeksma">github.com/bbeeksma</a></p>
     </div>
     <div><img src="assets/dustin.png" />
@@ -81,7 +98,14 @@
   <script src="https://use.fontawesome.com/a86c42ca42.js"></script>
   <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.amd.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js'></script>
+
+  <script src="scripts/controller/aboutController.js"></script>
+  <script src="scripts/controller/homeController.js"></script>
+  <script src="scripts/controller/nutritionController.js"></script>
+  <script src="scripts/controller/recipeController.js"></script>
+
   <script src="scripts/controller/routes.js"></script>
+  <script src="scripts/menuAnimations.js"></script>
 </body>
 </html>

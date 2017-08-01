@@ -4,7 +4,7 @@ const express = require('express');
 //const requestProxy = require('express-request-proxy');
 const PORT = process.env.PORT || 3000;
 const app = express();
-const conString = process.env.DATABASE_URL;
+const conString = process.env.DATABASE_URL || 'postgres://postgres:DeltaV@localhost:5432/chow';
 const client = new pg.Client(conString);
 client.connect();
 client.on('error', err => console.error(err));

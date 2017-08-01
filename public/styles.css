@@ -1,0 +1,12 @@
+.mainNav{
+  max-height: 0px;
+  overflow: hidden;
+  font-size: 30px;
+  max-height: 0px;
+  transition-property: all;
+  transition-duration: .5s;
+  transition-timing-function: ease;
+}
+.show{
+  max-height: 300px;
+}
