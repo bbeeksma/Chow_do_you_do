@@ -6,7 +6,7 @@ var app = app || {};
 page('/', app.homeController.show);
 page('/about', app.aboutController.show);
 page('/nutrition', app.nutritionController.show);
-page('/recipe', app.recipeController.show);
+page('/recipes', app.recipeController.show);
 
 page();
 
