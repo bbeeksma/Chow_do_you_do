@@ -27,7 +27,7 @@ function createTables() {
     CREATE TABLE IF NOT EXISTS
     saved_recipes (
       saved_recipes_id SERIAL PRIMARY KEY
-      ,user_id INTEGER NOT NULL REFERENCES authors(author_id)
+      ,user_id INTEGER NOT NULL REFERENCES users(user_id)
       ,body TEXT NOT NULL
       ,created DATETIME DEFAULT NOW()
     );`
