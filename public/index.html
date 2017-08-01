@@ -1,11 +1,72 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>About Me</title>
+  <link rel="stylesheet" href="vendor/reset.css" type="text/css"/>
   <link rel="stylesheet" href="style.css" type="text/css"/>
+  <script src="https://developer.edamam.com/attribution/badge.js"></script>
 </head>
 <body>
   <h1>Chow Do You Do?</h1>
+  <nav>
+    <ul>
+      <li>Home</li>
+      <li>Search Recipes</li>
+      <li>Build Your own Recipe</li>
+      <li>About Us</li>
+    </ul>
+  </nav>
+
+  <section class="sign-in">
+    <form></form>
+  </section>
+
+  <section class="tab-content home">
+    <div class="button-wrap">
+      <button type="button">This is a button</button>
+    </div>
+    <div>
+      <article>
+        Recipe 1
+        <!--Rendered recipe-->
+      </article>
+      <article>
+        Recipe 2
+        <!--Rendered recipe-->
+      </article>
+      <article>
+        Recipe 3
+        <!--Rendered recipe-->
+      </article>
+    </div>
+  </section>
+
+  <section class="tab-content recipe">
+    <div class="drop-down off"></div>
+    <!--dropdown menu content here-->
+    <div class="recipe-result-wrap">
+      <div class="recipe-result">
+        <!--Render recipes here-->
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-content nutrition">
+    <!--Stretch goal-->
+  </section>
+
+  <section class="tab-content about">
+    <!--David's content here-->
+  </section>
+  <footer>
+    <!--Adttributions here-->
+    <div id="edamam-badge" data-color="white"></div>
+    <img src="assets/deltav.png"/>
+  </footer>
+  <script src="https://use.fontawesome.com/a86c42ca42.js"></script>
+  <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.amd.min.js"></script>
+  <script src="scripts/controller/routes.js"></script>
 </body>
 </html>
