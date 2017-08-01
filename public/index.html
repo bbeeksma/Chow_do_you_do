@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>About Me</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="vendor/reset.css" type="text/css"/>
   <link rel="stylesheet" href="style.css" type="text/css"/>
   <script src="https://developer.edamam.com/attribution/badge.js"></script>
@@ -56,21 +57,22 @@
   </section>
 
   <section class="tab-content about">
-  <img src="assets/benjamin.JPG"/>
-  <img src="assets/dustin.png"/>
-  <img src="assets/jason.JPG"/>
-  <img src="assets/david.jpg"/>
-  <img src="assets/mitch.JPG"/>
+  <div><img src="assets/benjamin.JPG" id="benjamin" width="75vw" height="75vw"/><div class="benjamin">erte</div></div>
+  <div class="dustin"><img src="assets/dustin.png" width="75vw" height="75vw"/></div>
+  <div class="jason"><img src="assets/jason.JPG" width="75vw" height="75vw"/></div>
+  <div class="david"><img src="assets/david.jpg" width="75vw" height="75vw"/></div>
+  <div class="mitch"><img src="assets/mitch.JPG" width="75vw" height="75vw"/></div>
   </section>
   <footer>
     <!--Adttributions here-->
     <div id="edamam-badge" data-color="white"></div>
-    <img src="assets/deltav.png"/>
+    <img src="assets/deltav.png" width="75vw" height="75vw"/>
   </footer>
   <script src="https://use.fontawesome.com/a86c42ca42.js"></script>
   <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.amd.min.js"></script>
   <script src="scripts/controller/routes.js"></script>
+  <script src="scripts/about.js"></script>
 </body>
 </html>
