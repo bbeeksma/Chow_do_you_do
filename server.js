@@ -15,10 +15,8 @@ client.on('error', err => console.error(err));
 app.use(express.static('./public'));
 
 function proxyEdamam(request, response){
-  console.log('Routing Edamam request');
-  console.log(request.url);
   request.url = request.url.replace(/%2c/gi, ',');
-  console.log(request.url);
+  console.log('Routing Edamam request for ' + request.url);
   (requestProxy({
     url: 'https://api.edamam.com/search'
     ,query: {
