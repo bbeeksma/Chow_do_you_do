@@ -1,7 +1,7 @@
 const pg = require('pg');
 const express = require('express');
 //const bodyParser = require('body-parser');
-//const requestProxy = require('express-request-proxy');
+const requestProxy = require('express-request-proxy');
 const PORT = process.env.PORT || 3000;
 const app = express();
 const conString = process.env.DATABASE_URL || 'postgres://postgres:DeltaV@localhost:5432/chow';
@@ -11,6 +11,14 @@ client.on('error', err => console.error(err));
 
 app.use(express.static('./public'));
 
+function proxyEdamam(request, response){
+  console.log(`Routing Edamam request for ${request.params[0]}`);
+  (requestProxy({
+    url: `https://api.edamam.com/search${request.params[0]}`
+  }))(request, response);
+}
+
+app.get('/edamam/*', proxyEdamam);
 app.get('*', (request, response) => response.sendFile('index.html', {root: './public'}));
 
 app.listen(PORT, ()=> console.log('express is listening on ' + PORT));
