@@ -1,5 +1,4 @@
-const recipeApiId =  '';
-const recipeApiKey = '';
+
 var caloriesMin = 'gte%20200'; //format as gte%20<number>
 var caloriesMax = 'lte%20900'; //format as lte%20<number>
 var health = 'peanut-free';
@@ -32,8 +31,16 @@ page();
 
 getRecipe = () => {
   $.ajax({
-    url: `/edamam/?q=${ingredient}&app_id=${recipeApiId}&app_key=${recipeApiKey}&from=0&to=100&calories=${caloriesMin},%20${caloriesMax}&health=${health}&diet=${diet}`
+    url: '/edamam/'
     ,method: 'GET'
+    ,data: {
+      q: 'beef'
+      ,from: 0
+      ,to: 20
+      ,calories:'gte 200, lte 722'
+      ,health:'peanut-free'
+      ,diet:'low-carb'
+    }
   })
   .then(data => {
     console.log(data);

@@ -4,7 +4,10 @@ const express = require('express');
 const requestProxy = require('express-request-proxy');
 const PORT = process.env.PORT || 3000;
 const app = express();
-const conString = process.env.DATABASE_URL || 'postgres://postgres:DeltaV@localhost:5432/chow';
+const conString = process.env.DATABASE_URL;
+const recipeApiId =  process.env.RECIPE_API_ID;
+const recipeApiKey = process.env.RECIPE_API_KEY;
+
 const client = new pg.Client(conString);
 client.connect();
 client.on('error', err => console.error(err));
@@ -12,9 +15,16 @@ client.on('error', err => console.error(err));
 app.use(express.static('./public'));
 
 function proxyEdamam(request, response){
-  console.log(`Routing Edamam request for ${request.params[0]}`);
+  console.log('Routing Edamam request');
+  console.log(request.url);
+  request.url = request.url.replace(/%2c/gi, ',');
+  console.log(request.url);
   (requestProxy({
-    url: `https://api.edamam.com/search${request.params[0]}`
+    url: 'https://api.edamam.com/search'
+    ,query: {
+      app_id: recipeApiId
+      ,app_key: recipeApiKey
+    }
   }))(request, response);
 }
 
