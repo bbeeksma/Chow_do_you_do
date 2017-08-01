@@ -1,2 +1,2 @@
-$(".benjamin").hide();
-$("#benjamin").on("focus", function(){$(".benjamin").show()});
+$("#benjamin").find("p").hide();
+$("#benjamin").on("click", function(){$(this).find("p").show()});
