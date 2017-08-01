@@ -54,3 +54,9 @@ getRecipe = () => {
     console.log(recipeResults);
   });
 };
+
+page('/', app.homeController.show);
+page('/about', app.aboutController.show);
+page('/nutrition', app.nutritionController.show);
+page('/recipes', app.recipeController.show);
+page();
