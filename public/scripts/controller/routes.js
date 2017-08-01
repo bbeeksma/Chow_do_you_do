@@ -1,22 +1,62 @@
-const recipeApiId =  '';
-const recipeApiKey = '';
+var caloriesMin = 'gte%20200'; //format as gte%20<number>
+var caloriesMax = 'lte%20900'; //format as lte%20<number>
+var health = 'peanut-free';
+var diet = 'low-carb';
+var ingredient = 'beef';
+/*
+DIET:
+balanced,
+high-protein,
+low-fat,
+low-carb,
 
-var app = app || {};
+HEALTH
+vegan,
+vegetarian,
+sugar-conscious,
+peanut-free,
+tree-nut-free,
+alcohol-free
+*/
+
+/*
+  name: object.label
+  image: object.image
+  serving count: object.yield
+  calorie count: object.calories
+  ingredients: object.ingredietLines(array)
+  recipe link: object.url
+  carb count: object.totalNutrients.CHOCDF.quantity
+    carb unit:object.object.totalNutrients.CHOCDF.unit
+  protein: object.totalNutrients.PROCNT.quantity
+    protein unit: object.totalNutrients.PROCNT.unit
+  fat: object.totalNutrients.FAT.quantity
+    fat: object.totalNutrients.FAT.unit
+*/
+var recipeResults;
+getRecipe = () => {
+  $.ajax({
+    url: '/edamam/'
+    ,method: 'GET'
+    ,data: {
+      q: 'beef'
+      ,from: 0
+      ,to: 20
+      ,calories:'gte 200, lte 722'
+      ,health:'peanut-free'
+      ,diet:'low-carb'
+    }
+  }).then(data => {
+    recipeResults = data.hits.map(function(item){
+      return item.recipe;
+    });
+
+    console.log(recipeResults);
+  });
+};
 
 page('/', app.homeController.show);
 page('/about', app.aboutController.show);
 page('/nutrition', app.nutritionController.show);
 page('/recipes', app.recipeController.show);
-
 page();
-
-getRecipe = () => {
-  $.ajax({
-    url: `https://api.edamam.com/search?q=chicken&app_id=${recipeApiId}&app_key=${recipeApiKey}&from=0&to=3&calories=gte%20591,%20lte%20722&health=alcohol-free`
-    ,method: 'GET'
-  })
-  .then(data => {
-    console.log(data);
-  }
-  );
-};
