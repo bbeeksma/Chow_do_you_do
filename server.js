@@ -4,7 +4,6 @@ const express = require('express');
 //const requestProxy = require('express-request-proxy');
 const PORT = process.env.PORT || 3000;
 const app = express();
-
 const conString = process.env.DATABASE_URL;
 const client = new pg.Client(conString);
 client.connect();
@@ -13,6 +12,7 @@ client.on('error', err => console.error(err));
 app.use(express.static('./public'));
 
 app.get('*', (request, response) => response.sendFile('index.html', {root: './public'}));
+
 app.listen(PORT, ()=> console.log('express is listening on ' + PORT));
 
 function createTables() {
