@@ -14,9 +14,9 @@ var app = app || {};
   var healthParam = 'peanut-free';
   var dietParam = 'low-carb';
   var ingredient = 'beef';
-  recipeController.recipeResults;
+  recipeController.recipeResults = [];
 
-  recipeControler.dataObj = {
+  recipeController.dataObj = {
     q: ingredient
     ,from: 0
     ,to: 100
@@ -34,7 +34,7 @@ var app = app || {};
       recipeController.recipeResults = data.hits.map(function(item){
         return item.recipe;
       });
-      console.log(recipeResults);
+      console.log(recipeController.recipeResults);
     });
   };
 
