@@ -29,7 +29,17 @@ var app = app || {};
     }
   }
 
-  //returns ingredients as a list of <li> elements to append with the tmplate
+  Recipe.fetchRandomRecipes = function(){
+    var recipeResults;
+    $.getJSON('../assets/starterRecipes.json',function(data){
+      recipeResults = data;
+      console.log('Recipes ', recipeResults);
+    }).then(function(){
+      Recipe.initRecipes(recipeResults);
+    });
+  };
+
+ //returns ingredients as a list of <li> elements to append with the tmplate
   Recipe.buildIngredientsList = function(ingredients){
     var allIngredients = ingredients.map(function(item){
       return '<li>' + item + '</li>';
@@ -40,7 +50,7 @@ var app = app || {};
     return allIngredients;
   };
 
-  Recipe.loadRecipes = function(){
+  Recipe.loadRecipes = function(recipeResults){
     Recipe.all = recipeResults.map(function(recipe){
       return new Recipe(recipe);
     });
@@ -56,15 +66,16 @@ var app = app || {};
     return Math.floor(Math.random() * Recipe.all.length);
   };
 
-  Recipe.initRecipes = function(){
-    Recipe.loadRecipes();
-    var thisRecipe = Recipe.getRandomRecipe();
-    $('#recipes').empty().append(Recipe.toHtml(Recipe.all[thisRecipe]));
+//use this function to add recipes to the page
+  Recipe.initRecipes = function(recipes){
+    console.log(recipes);
+    Recipe.loadRecipes(recipes);
+    for (var i = 0; i < 3; i++){
+      var thisRecipe = Recipe.getRandomRecipe();
+      console.log(i,thisRecipe);
+      $('#recipes').append(Recipe.toHtml(Recipe.all[thisRecipe]));
+    }
   };
-  //Get Recipes Handler function: Feel free to move this whare necessary
-  $('#button').on('click', function(){
-    Recipe.initRecipes();
-  });
 
   module.Recipe = Recipe;
 })(app);
