@@ -34,18 +34,20 @@ app.post('/users', function(request, response) {
     'INSERT INTO users(user_name) VALUES($1) ON CONFLICT DO NOTHING',
     [request.body.user_name],
     function(err) {
-      if (err) console.error(err)
+      if (err) console.error(err);
     }
-  )
+  );
+});
 
-  app.post('/saved_recipes', function(request, response) {
-    client.query(
-      'INSERT INTO saved_recipes(user_id,body,) VALUES($1,$2) ON CONFLICT DO NOTHING',
-      [request.body.user_id,request.body.body],
-      function(err) {
-        if (err) console.error(err)
-      }
-    )
+app.post('/saved_recipes', function(request, response) {
+  client.query(
+    'INSERT INTO saved_recipes(user_id,body,) VALUES($1,$2) ON CONFLICT DO NOTHING',
+    [request.body.user_id,request.body.body],
+    function(err) {
+      if (err) console.error(err);
+    }
+  );
+});
 
 app.listen(PORT, ()=> console.log('express is listening on ' + PORT));
 
