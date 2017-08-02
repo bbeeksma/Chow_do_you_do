@@ -4,7 +4,13 @@
   "scripts": {
   },
   "env": {
-  },
+   "RECIPE_API_ID": {
+     "required": true
+   },
+   "RECIPE_API_KEY": {
+     "required": true
+   },
+ },
   "formation": {
   },
   "addons": [
