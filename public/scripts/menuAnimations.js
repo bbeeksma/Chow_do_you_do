@@ -12,4 +12,5 @@ $('.getRecipes').on('click', function(){
 });
 $(document).ready(function(){
   $('#home').show();
+  recipeController.submitListener();
 });

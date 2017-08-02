@@ -8,7 +8,6 @@ var app = app || {};
   recipeController.show = () => {
     $('.tab-content').hide();
     $('#recipe').show();
-    recipeController.submitListener();
   };
 
   recipeController.recipeResults = [];
