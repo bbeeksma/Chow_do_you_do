@@ -35,9 +35,18 @@ var app = app || {};
     });
   };
 
-  Recipe.initializeRecipe = function(){
+  Recipe.toHtml = function(){
     var template = Handlebars.compile('#recipe-template');
     return template(this);
+  };
+
+  Recipe.getDisplayRecipes = function(){
+    //var randomRecipe = Math.floor(Math.random() * Recipe.all.length);
+  };
+
+  Recipe.initRecipes = function(){
+    Recipe.loadRecipes();
+    $('#recipe1').append(Recipe.toHtml(Recipe.all[0]));
   };
 
   module.Recipe = Recipe;

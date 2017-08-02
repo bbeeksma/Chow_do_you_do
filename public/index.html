@@ -9,6 +9,19 @@
   <link rel="stylesheet" href="about.css" type="text/css"/>
   <link rel="stylesheet" href="styles.css" type="text/css"/>
   <script src="https://developer.edamam.com/attribution/badge.js"></script>
+  <script id="recipe-template" type="text/x-handlebars-template">
+    <h2>{{name}}</h2>
+    <img src="{{image}}"/>
+    <ul>
+      {{ingredients}}
+    </ul>
+    <p>Servings: {{servingCount}}
+    Calories: {{calorieCount}}
+    <a href="{{recipeLink}}">Cooking Instructions Here</a>
+    Carbs: {{carbCount}}
+    Protein Content: {{protein}}
+    Fat Content: {{fat}}
+  </script>
 </head>
 <body>
   <header>
