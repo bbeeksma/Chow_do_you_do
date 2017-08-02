@@ -1,6 +1,6 @@
 const pg = require('pg');
 const express = require('express');
-//const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 const requestProxy = require('express-request-proxy');
 const PORT = process.env.PORT || 3000;
 const app = express();
@@ -12,6 +12,8 @@ const client = new pg.Client(conString);
 client.connect();
 client.on('error', err => console.error(err));
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('./public'));
 
 function proxyEdamam(request, response){
@@ -28,6 +30,59 @@ function proxyEdamam(request, response){
 
 app.get('/edamam/*', proxyEdamam);
 app.get('*', (request, response) => response.sendFile('index.html', {root: './public'}));
+
+app.post('/users', function(request, response) {
+  client.query(
+    'INSERT INTO users(user_name) VALUES($1) ON CONFLICT DO NOTHING',
+    [request.body.user_name],
+    function(err) {
+      if (err) console.error(err);
+    }
+  );
+});
+
+app.post('/saved_recipes', function(request, response) {
+  client.query(
+    'INSERT INTO saved_recipes(user_id,body,) VALUES($1,$2) ON CONFLICT DO NOTHING',
+    [request.body.user_id,request.body.body],
+    function(err) {
+      if (err) console.error(err);
+    }
+  );
+});
+
+app.delete('/saved_recipes/:id', (request, response) => {
+  client.query(
+    `DELETE FROM saved_recipes WHERE saved_recipes_id=$1;`,
+    [request.params.id]
+  )
+    .then(() => response.send('Delete complete'))
+    .catch(console.error);
+});
+
+app.delete('/saved_recipes_by_user/:user_id', (request, response) => {
+  client.query(
+    `DELETE FROM saved_recipes WHERE user_id=$1;`,
+    [request.params.user_id]
+  )
+    .then(() => response.send('Delete complete'))
+    .catch(console.error);
+});
+
+app.delete('/users/:user_id', (request, response) => {
+  client.query(
+      `DELETE FROM saved_recipes WHERE user_id=$1;`,
+      [request.params.user_id]
+    )
+      .then(() => response.send('Delete complete'))
+      .catch(console.error);
+  client.query(
+    `DELETE FROM users WHERE user_id=$1;`,
+    [request.params.user_id]
+  )
+    .then(() => response.send('Delete complete'))
+    .catch(console.error);
+});
 
 app.listen(PORT, ()=> console.log('express is listening on ' + PORT));
 
