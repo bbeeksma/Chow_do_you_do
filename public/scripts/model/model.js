@@ -35,10 +35,10 @@ var app = app || {};
     });
   };
 
-  Recipe.toHtml = function(){
+  Recipe.toHtml = function(recipe){
     var template = Handlebars.compile($('#recipe-template').html());
-    console.log('handlebars template: ',template(Recipe.all[0]), Recipe.all[0]);
-    return template(this);
+    console.log('handlebars template: ',template(recipe), recipe);
+    return template(recipe);
   };
 
   Recipe.getDisplayRecipes = function(){
