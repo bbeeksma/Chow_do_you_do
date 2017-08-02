@@ -49,7 +49,7 @@ app.post('/saved_recipes', function(request, response) {
   );
 });
 
-app.delete('/user/saved_recipes/:user_id', (request, response) => {
+app.delete('/saved_recipes_by_user/:user_id', (request, response) => {
   client.query(
     `DELETE FROM saved_recipes WHERE user_id=$1;`,
     [request.params.user_id]
