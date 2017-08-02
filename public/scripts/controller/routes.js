@@ -1,8 +1,3 @@
-var caloriesMin = 'gte%20200'; //format as gte%20<number>
-var caloriesMax = 'lte%20900'; //format as lte%20<number>
-var health = 'peanut-free';
-var diet = 'low-carb';
-var ingredient = 'beef';
 /*
 DIET:
 balanced,
@@ -33,18 +28,25 @@ alcohol-free
   fat: object.totalNutrients.FAT.quantity
     fat: object.totalNutrients.FAT.unit
 */
+
+var caloriesMin = 'gte%20200'; //format as gte%20<number>
+var caloriesMax = 'lte%20900'; //format as lte%20<number>
+var health = 'peanut-free';
+var diet = 'low-carb';
+var ingredient = 'beef';
+
 var recipeResults;
 getRecipe = () => {
   $.ajax({
     url: '/edamam/'
     ,method: 'GET'
     ,data: {
-      q: 'beef'
+      q: ingredient
       ,from: 0
-      ,to: 20
-      ,calories:'gte 200, lte 722'
-      ,health:'peanut-free'
-      ,diet:'low-carb'
+      ,to: 100
+      ,calories:`gte ${caloriesMin}, lte ${caloriesMax}`
+      ,health:health
+      ,diet:ingredient
     }
   }).then(data => {
     recipeResults = data.hits.map(function(item){
