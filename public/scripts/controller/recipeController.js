@@ -16,7 +16,7 @@ var app = app || {};
   var ingredient = 'beef';
   var recipeResults;
 
-  recipeController.getRecipe = (ingredient,caloriesMin,caloriesMax,health,diet) => {
+  recipeController.getRecipe = (ingredient,caloriesMin,caloriesMax,healthParam,dietParam) => {
     $.ajax({
       url: '/edamam/'
       ,method: 'GET'
