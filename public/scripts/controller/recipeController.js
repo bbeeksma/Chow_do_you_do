@@ -11,10 +11,19 @@ var app = app || {};
   };
   var caloriesMin = '200'; //format as gte%20<number>
   var caloriesMax = '900'; //format as lte%20<number>
-  var health = 'peanut-free';
-  var diet = 'low-carb';
+  var healthParam = 'peanut-free';
+  var dietParam = 'low-carb';
   var ingredient = 'beef';
   recipeController.recipeResults;
+
+  recipeControler.dataObj = {
+    q: ingredient
+    ,from: 0
+    ,to: 100
+    ,calories:`gte ${caloriesMin}, lte ${caloriesMax}`
+    ,health:healthParam
+    ,diet:dietParam
+  };
 
   recipeController.getRecipe = (dataObj) => {
     $.ajax({
