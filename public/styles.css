@@ -68,6 +68,7 @@ footer{
   background-color: #FE938C;
   border-radius: 10px;
   padding: 20px 70px;
+  border: none;
 }
 .navWrapper{
   text-align: center;
