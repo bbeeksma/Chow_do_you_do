@@ -92,3 +92,6 @@ nav a{
 .show{
   max-height: 1000px;
 }
+.off{
+  display: none;
+}
