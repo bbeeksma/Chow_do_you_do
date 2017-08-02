@@ -70,6 +70,7 @@ var app = app || {};
   Recipe.initRecipes = function(recipes,location){
     console.log(recipes);
     Recipe.loadRecipes(recipes);
+    $(location).empty();
     for (var i = 0; i < 3; i++){
       var thisRecipe = Recipe.getRandomRecipe();
       console.log(i,thisRecipe);
