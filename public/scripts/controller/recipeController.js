@@ -11,30 +11,30 @@ var app = app || {};
   };
   var caloriesMin = '200'; //format as gte%20<number>
   var caloriesMax = '900'; //format as lte%20<number>
-  var healthParam = 'peanut-free';
+  var healthParam1 = 'peanut-free';
+  var healthParam2 = 'peanut-free';
   var dietParam = 'low-carb';
   var ingredient = 'beef';
   recipeController.recipeResults = [];
 
-  recipeController.dataObj = {
-    q: ingredient
-    ,from: 0
-    ,to: 100
-    ,calories:`gte ${caloriesMin}, lte ${caloriesMax}`
-    ,health:healthParam
-    ,diet:dietParam
-  };
-
-  recipeController.getRecipe = (dataObj) => {
+  recipeController.getRecipe = (dataString) => {
     $.ajax({
       url: '/edamam/'
       ,method: 'GET'
-      ,data: dataObj
+      ,data: dataString
     }).then(data => {
       recipeController.recipeResults = data.hits.map(function(item){
         return item.recipe;
       });
       console.log(recipeController.recipeResults);
+    });
+  };
+  recipeController.onSubmit = () => {
+    $('#recipeLookup').submit(function(e) {
+      e.preventDefault();
+      var values = $(this).serialize();
+      console.log(values);
+      recipeController.getRecipe(values);
     });
   };
 
