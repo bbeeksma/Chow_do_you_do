@@ -29,6 +29,15 @@ function proxyEdamam(request, response){
 app.get('/edamam/*', proxyEdamam);
 app.get('*', (request, response) => response.sendFile('index.html', {root: './public'}));
 
+app.post('/users', function(request, response) {
+  client.query(
+    'INSERT INTO users(user_name) VALUES($1) ON CONFLICT DO NOTHING',
+    [request.body.user_name],
+    function(err) {
+      if (err) console.error(err)
+    }
+  )
+
 app.listen(PORT, ()=> console.log('express is listening on ' + PORT));
 
 function createTables() {
