@@ -36,7 +36,8 @@ var app = app || {};
   };
 
   Recipe.toHtml = function(){
-    var template = Handlebars.compile('#recipe-template');
+    var template = Handlebars.compile($('#recipe-template').html());
+    console.log('handlebars template: ',template(Recipe.all[0]), Recipe.all[0]);
     return template(this);
   };
 
@@ -46,7 +47,8 @@ var app = app || {};
 
   Recipe.initRecipes = function(){
     Recipe.loadRecipes();
-    $('#recipe1').append(Recipe.toHtml(Recipe.all[0]));
+    console.log('Recipes Loaded');
+    $('#recipe1').empty().append(Recipe.toHtml(Recipe.all[0]));
   };
 
   module.Recipe = Recipe;
