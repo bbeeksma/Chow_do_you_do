@@ -1,7 +1,7 @@
 
 $(document).ready(function(){
   $('#home').show();
-<<<<<<< 429a9004bd7d1609b741a060fabfaebcb91ee913
+
   app.recipeController.submitListener();
   $('.toggleMenu').on('click', function(){
     $('.mainNav').toggleClass('show');
@@ -15,7 +15,7 @@ $(document).ready(function(){
     $('.tab-content').hide();
     $('#recipe').fadeIn();
   });
-=======
-  app.Recipe.fetchRandomRecipes()
->>>>>>> rendering random recipes on page load
+
+  app.Recipe.fetchRandomRecipes();
+
 });
