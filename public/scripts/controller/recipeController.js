@@ -8,6 +8,7 @@ var app = app || {};
   recipeController.show = () => {
     $('.tab-content').hide();
     $('#recipe').show();
+    recipeController.submitListener();
   };
 
   recipeController.recipeResults = [];
@@ -24,7 +25,7 @@ var app = app || {};
       console.log(recipeController.recipeResults);
     });
   };
-  recipeController.onSubmit = () => {
+  recipeController.submitListener = () => {
     $('#recipeLookup').submit(function(e) {
       e.preventDefault();
       var values = $(this).serialize();
