@@ -4,8 +4,8 @@ var app = app || {};
 (function(module) {
   const recipeController = {};
   recipeController.show = () => {
-    $('.tab-content').fadeOut();
-    $('#recipe').fadeIn();
+    $('.tab-content').hide();
+    $('#recipe').show();
   };
   module.recipeController = recipeController;
 })(app);

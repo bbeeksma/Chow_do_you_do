@@ -4,8 +4,8 @@ var app = app || {};
 (function(module) {
   const nutritionController = {};
   nutritionController.show = () => {
-    $('.tab-content').fadeOut();
-    $('#nutrition').fadeIn();
+    $('.tab-content').hide();
+    $('#nutrition').show();
   };
   module.nutritionController = nutritionController;
 })(app);

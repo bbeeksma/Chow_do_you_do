@@ -1,3 +1,8 @@
+/*-------------------------BASE------------------------------*/
+.tab-content{
+  display: none;
+}
+/*-----------------------LAYOUT------------------------------*/
 .mainNav{
   max-height: 0px;
   overflow: hidden;
@@ -7,6 +12,9 @@
   transition-duration: .5s;
   transition-timing-function: ease;
 }
+/*---------------------MODULE-------------------------------*/
+
+/*---------------------STATE--------------------------------*/
 .show{
   max-height: 300px;
 }
