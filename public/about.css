@@ -1,3 +1,19 @@
 img{
   max-width: 100%;
 }
+.about{
+align-items: center;
+text-align: center;
+}
+@media (min-width: 400px){
+  .about p{
+    text-align: right;
+    margin-right: 5px;
+  }
+}
+@media (min-width: 600px){
+  .about p{
+    text-align: right;
+    vertical-align: middle;
+  }
+}
