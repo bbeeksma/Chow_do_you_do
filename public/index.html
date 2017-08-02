@@ -9,6 +9,22 @@
   <link rel="stylesheet" href="about.css" type="text/css"/>
   <link rel="stylesheet" href="styles.css" type="text/css"/>
   <script src="https://developer.edamam.com/attribution/badge.js"></script>
+  <script id="recipe-template" type="text/x-handlebars-template">
+    <article>
+      <h2>{{name}}</h2>
+      <img src="{{image}}"/>
+      <ul>
+        {{{ingredients}}}
+      </ul>
+      <p>Servings: {{servingCount}}
+      Calories: {{calorieCount}}
+      <a href="{{recipeLink}}">Cooking Instructions Here</a>
+      Carbs: {{carbCount}}
+      Protein Content: {{protein}}
+      Fat Content: {{fat}}
+    </p>
+  </article>
+  </script>
 </head>
 <body>
   <header>
@@ -50,14 +66,14 @@
 
   <section id="home" class="tab-content home">
     <div class="button-wrap">
-      <button type="button" class="getRecipes clickable">Get Recipes!</button>
+      <button id="button" type="button" class="getRecipes clickable">Get Recipes!</button>
     </div>
 
     <div class="hrTry">
     <span>Or Try These!</span>
     </div>
 
-    <div>
+    <div id="recipes">
       <article class="recipe">
         Recipe 1
         <!--Rendered recipe-->
@@ -173,6 +189,7 @@
   <script src="scripts/controller/recipeController.js"></script>
 
   <script src="scripts/controller/routes.js"></script>
+  <script src="scripts/model/model.js"></script>
   <script src="scripts/menuAnimations.js"></script>
 </body>
 </html>

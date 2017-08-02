@@ -22,6 +22,7 @@ var app = app || {};
         return item.recipe;
       });
       console.log(recipeController.recipeResults);
+      app.Recipe.initRecipes(recipeController.recipeResults,'.recipe-result');
     });
   };
   recipeController.submitListener = () => {

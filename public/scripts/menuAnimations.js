@@ -1,6 +1,7 @@
 
 $(document).ready(function(){
   $('#home').show();
+
   app.recipeController.submitListener();
   $('.toggleMenu').on('click', function(){
     $('.mainNav').toggleClass('show');
@@ -14,4 +15,7 @@ $(document).ready(function(){
     $('.tab-content').hide();
     $('#recipe').fadeIn();
   });
+
+  app.Recipe.fetchRandomRecipes();
+
 });
