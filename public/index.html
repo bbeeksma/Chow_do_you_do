@@ -3,6 +3,8 @@
 <head>
   <title>Chow Do You Do?</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Anton|Lobster" rel="stylesheet">
+  <script src="https://use.fontawesome.com/a86c42ca42.js"></script>
   <link rel="stylesheet" href="vendor/reset.css" type="text/css"/>
   <link rel="stylesheet" href="about.css" type="text/css"/>
   <link rel="stylesheet" href="styles.css" type="text/css"/>
@@ -10,30 +12,38 @@
 </head>
 <body>
   <header>
-    <i class="fa fa-bars clickable toggleMenu" aria-hidden="true"></i>
-    <nav class='mainNav'>
-      <ul class='navList'>
-        <li>
-          <a href="/" data-content='home'>Home</a>
-        </li>
-        <li>
-          <a href="/recipes" data-content='recipes'>Recipes</a>
-        </li>
-        <li>
-          <a href="/nutrition" data-content='nutrition'>Nutrition</a>
-        </li>
-        <li>
-          <a href="/about" data-content='about'>About</a>
-        </li>
-      </ul>
-    </nav>
+    <i class="fa fa-bars icon clickable toggleMenu" aria-hidden="true"></i>
+
     <div class='logo'>
       <h1>Chow Do You Do?</h1>
     </div>
 
-    <i class="fa fa-user-circle clickable" aria-hidden="true"></i>
+    <i class="fa fa-user-circle icon clickable" aria-hidden="true"></i>
+
+    <div class=clear></div>
+
+    <section class="navWrapper">
+      <nav class='mainNav'>
+        <ul class='navList'>
+          <li>
+            <a href="/" data-content='home'>Home</a>
+          </li>
+          <li>
+            <a href="/recipes" data-content='recipes'>Recipes</a>
+          </li>
+          <li>
+            <a href="/nutrition" data-content='nutrition'>Nutrition</a>
+          </li>
+          <li>
+            <a href="/about" data-content='about'>About</a>
+          </li>
+        </ul>
+      </nav>
+    </section>
 
   </header>
+
+  <div class=clear></div>
 
   <section class="sign-in">
     <form></form>
@@ -41,7 +51,7 @@
 
   <section id="home" class="tab-content home">
     <div class="button-wrap">
-      <button type="button">This is a button</button>
+      <button type="button" class="getRecipes clickable">Get Recipes!</button>
     </div>
     <div>
       <article>
@@ -110,9 +120,8 @@
   <footer>
     <!--Adttributions here-->
     <div id="edamam-badge" data-color="white"></div>
-    <img src="assets/deltav.png" width="75vw" height="75vw"/>
+    <div id="DeltaV"><img src="assets/deltav.png" width="75vw" height="75vw"/></div>
   </footer>
-  <script src="https://use.fontawesome.com/a86c42ca42.js"></script>
   <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js'></script>
