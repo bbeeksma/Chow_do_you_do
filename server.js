@@ -69,6 +69,21 @@ app.delete('/saved_recipes_by_user/:user_id', (request, response) => {
     .catch(console.error);
 });
 
+app.delete('/users/:user_id', (request, response) => {
+  client.query(
+      `DELETE FROM saved_recipes WHERE user_id=$1;`,
+      [request.params.user_id]
+    )
+      .then(() => response.send('Delete complete'))
+      .catch(console.error);
+  client.query(
+    `DELETE FROM users WHERE user_id=$1;`,
+    [request.params.user_id]
+  )
+    .then(() => response.send('Delete complete'))
+    .catch(console.error);
+});
+
 app.listen(PORT, ()=> console.log('express is listening on ' + PORT));
 
 function createTables() {
