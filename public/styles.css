@@ -18,10 +18,11 @@ body{
   background-color: #4281A4;
 }
 /*-----------------------LAYOUT------------------------------*/
-.fa-sort-desc, .fa-times{
+.fa-toggle-down, .fa-toggle-up{
   width:100%;
+  padding-top: 10px;
   text-align: center;
-  font-size: 50px;
+  font-size: 40px;
   color: #9CAFB7;
 }
 .fa-user-circle{
@@ -66,24 +67,28 @@ body{
 .navWrapper{
   text-align: center;
   width: 100%;
-
 }
 
 nav li{
   font-size: 30px;
   text-align: center;
 }
+.navList{
+  height: 1000px;
+}
 /*---------------------MODULE-------------------------------*/
-a{
+nav a{
+  color: #E6B89C;
+  font-family: 'Anton', sans-serif;
   text-decoration: none;
   display: block;
+  padding: 10px;
   margin: 20px 30px;
-}
-a:link, a:visited{
-  color:black;
+  border: 2px solid #9CAFB7;
+  border-radius: 10px;
 }
 
 /*---------------------STATE--------------------------------*/
 .show{
-  max-height: 300px;
+  max-height: 1000px;
 }
