@@ -16,18 +16,11 @@ var app = app || {};
   var ingredient = 'beef';
   recipeController.recipeResults;
 
-  recipeController.getRecipe = (ingredient,caloriesMin,caloriesMax,healthParam,dietParam) => {
+  recipeController.getRecipe = (dataObj) => {
     $.ajax({
       url: '/edamam/'
       ,method: 'GET'
-      ,data: {
-        q: ingredient
-        ,from: 0
-        ,to: 100
-        ,calories:`gte ${caloriesMin}, lte ${caloriesMax}`
-        ,health:health
-        ,diet:diet
-      }
+      ,data: dataObj
     }).then(data => {
       recipeController.recipeResults = data.hits.map(function(item){
         return item.recipe;
