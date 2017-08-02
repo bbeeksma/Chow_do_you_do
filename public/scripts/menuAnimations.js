@@ -1,5 +1,6 @@
-
 $(document).ready(function(){
+  //later I will need to check local storage before rendering it.
+  $('.sign-in').show();
   $('#home').show();
 
   app.recipeController.submitListener();
