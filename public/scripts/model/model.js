@@ -1,7 +1,8 @@
 'use strict';
 var app = app || {};
 
-((module) => {
+(function(module) {
+
   Recipe.all = [];
 
   function Recipe(object){
@@ -11,19 +12,28 @@ var app = app || {};
     this.calorieCount = object.calories;
     this.ingredients = object.ingredietLines;
     this.recipeLink = object.url;
-    this.carbCount = object.totalNutrients.CHOCDF.quantity;
-    this.carbUnit = object.totalNutrients.CHOCDF.unit;
-    this.protein = object.totalNutrients.PROCNT.quantity;
-    this.proteinUnit = object.totalNutrients.PROCNT.unit;
-    this.fat = object.totalNutrients.FAT.quantity;
-    this.fatUnit = object.totalNutrients.FAT.unit;
+    if (object.totalNutrients.CHOCDF){
+      this.carbCount = object.totalNutrients.CHOCDF.quantity + ' ' + object.totalNutrients.CHOCDF.unit;
+    } else {
+      this.carbCount = 'Not Available';
+    }
+    if (object.totalNutrients.PROCNT){
+      this.protein = object.totalNutrients.PROCNT.quantity + ' ' + object.totalNutrients.PROCNT.unit;
+    } else {
+      this.protein = 'Not Available';
+    }
+    if (object.totalNutrients.FAT){
+      this.fat = object.totalNutrients.FAT.quantity + ' ' + object.totalNutrients.FAT.unit;
+    } else {
+      this.fat = 'Not Available';
+    }
   }
 
-  Recipe.loadRecipes(){
-    Recipe.all = recipeResults.map(function(recipe){
-      new Recipe(recipe);
+  Recipe.loadRecipes = function(){
+    recipeResults.forEach(function(recipe){
+      Recipe.all.push(new Recipe(recipe));
     });
-  }
+  };
 
   module.Recipe = Recipe;
-})(app)
+})(app);
