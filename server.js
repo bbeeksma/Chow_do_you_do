@@ -24,6 +24,8 @@ function proxyEdamam(request, response){
     ,query: {
       app_id: recipeApiId
       ,app_key: recipeApiKey
+      ,from: 0
+      ,to: 100
     }
   }))(request, response);
 }
