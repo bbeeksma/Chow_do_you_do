@@ -1,18 +1,3 @@
-/*
-DIET:
-balanced,
-high-protein,
-low-fat,
-low-carb,
-
-HEALTH
-vegan,
-vegetarian,
-sugar-conscious,
-peanut-free,
-tree-nut-free,
-alcohol-free
-*/
 
 /*
   name: object.label

@@ -78,19 +78,54 @@
     <!--dropdown menu content here-->
       <form id="recipeLookup">
         <label id="chooseIngedient">
-          <input type="text" id="ingredient" placeholder="Ingredient"></br>
+          <input type="text" id="ingredient" placeholder="Pick an ingredient you want to eat!">
         </label>
 
-        <label id="dietaryRestriction">
-          <input type="checkbox" name="vehicle" value=""> Thing
-          <input type="checkbox" name="vehicle" value=""> Thing <br>
-          <input type="checkbox" name="vehicle" value=""> Thing
-          <input type="checkbox" name="vehicle" value=""> Thing <br>
-          <input type="checkbox" name="vehicle" value=""> Thing
-          <input type="checkbox" name="vehicle" value=""> Thing <br>
-          <input type="checkbox" name="vehicle" value=""> Thing
-          <input type="checkbox" name="vehicle" value=""> Thing <br>
-        </label>
+        <fieldset class="diet">
+          <label class="dietaryRestriction">
+            <input type="checkbox" name="diet" value=""> Balanced
+          </label>
+          <label class="dietaryRestriction">
+            <input type="checkbox" name="diet" value=""> High-Protein
+          </label>
+          <label class="dietaryRestriction">
+            <input type="checkbox" name="diet" value=""> Low-Fat
+          </label>
+          <label class="dietaryRestriction">
+            <input type="checkbox" name="diet" value=""> Low-Carb
+          </label>
+        </fieldset>
+        <fieldset class="health">
+          <label class="dietaryRestriction">
+            <input type="checkbox" name="health" value=""> Vegan
+          </label>
+          <label class="dietaryRestriction">
+            <input type="checkbox" name="health" value=""> Vegetarian
+          </label>
+          <label class="dietaryRestriction">
+            <input type="checkbox" name="health" value=""> Sugar-Conscious
+          </label>
+          <label class="dietaryRestriction">
+            <input type="checkbox" name="health" value=""> Peanut-Free
+          </label>
+          <label class="dietaryRestriction">
+            <input type="checkbox" name="health" value=""> Tree-Nut-Free
+          </label>
+          <label class="dietaryRestriction">
+            <input type="checkbox" name="health" value=""> Alcohol-Free
+          </label>
+        </fieldset>
+
+        <select name="calories">
+          <option selected="selected" disabled="disabled">Select Calories per Serving</option>
+          <option value=150>Less than 150 Calories per serving</option>
+          <option value=200>150 to 200 Calories per Serving</option>
+          <option value=250>250 to 300 Calories per Serving</option>
+          <option value=300>300 to 350 Calories per Serving</option>
+          <option value=350>350 to 400 Calories per serving</option>
+          <option value=400>400 or more Calories per serving</option>
+        </select>
+
         <button type="submit">Search!</button>
       </form>
     <div class="recipe-result-wrap">
