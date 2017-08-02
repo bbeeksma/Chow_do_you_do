@@ -14,7 +14,7 @@ var app = app || {};
   var health = 'peanut-free';
   var diet = 'low-carb';
   var ingredient = 'beef';
-  var recipeResults;
+  recipeController.recipeResults;
 
   recipeController.getRecipe = (ingredient,caloriesMin,caloriesMax,healthParam,dietParam) => {
     $.ajax({
@@ -29,7 +29,7 @@ var app = app || {};
         ,diet:diet
       }
     }).then(data => {
-      recipeResults = data.hits.map(function(item){
+      recipeController.recipeResults = data.hits.map(function(item){
         return item.recipe;
       });
       console.log(recipeResults);
