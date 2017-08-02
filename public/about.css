@@ -1,3 +1,29 @@
 img{
   max-width: 100%;
 }
+.sign-in{
+  position: fixed;
+  z-index: 5;
+  background-color: white;
+  opacity: .5;
+  width: 100%;
+  height: 100%;
+}
+.go{
+  position: absolute;
+  top: 50vh;
+  left: 42.5vw;
+  width: 15vw;
+  height: 10vh;
+  text-align: center;
+  border: 1px solid;
+  border-radius: 5%;
+}
+.go input{
+  height: 3vh;
+  width: 10vw;
+}
+.go button{
+  height: 3vh;
+  width: 3vw;
+}

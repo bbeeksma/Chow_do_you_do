@@ -6,11 +6,19 @@
   <link href="https://fonts.googleapis.com/css?family=Anton|Lobster" rel="stylesheet">
   <script src="https://use.fontawesome.com/a86c42ca42.js"></script>
   <link rel="stylesheet" href="vendor/reset.css" type="text/css"/>
-  <link rel="stylesheet" href="about.css" type="text/css"/>
   <link rel="stylesheet" href="styles.css" type="text/css"/>
+  <link rel="stylesheet" href="about.css" type="text/css"/>
   <script src="https://developer.edamam.com/attribution/badge.js"></script>
 </head>
 <body>
+  <section class="sign-in">
+    <div class="go">
+      <form>
+        <input type="text" name="sign-in" placeholder="sign-in">
+        <div><button type="button">GO!</button></div>
+      </form>
+    </div>
+  </section>
   <header>
 
     <div class='logo'>
@@ -28,7 +36,7 @@
             <a href="/" data-content='home'>Home</a>
           </li>
           <li>
-            <a href="/recipes" data-content='recipes'>Recipes</a>
+            <a href="/recipces" data-content='recipes'>Recipes</a>
           </li>
           <li>
             <a href="/nutrition" data-content='nutrition'>Nutrition</a>
@@ -41,12 +49,7 @@
     </section>
 
   </header>
-
-  <div class=clear></div>
-
-  <section class="sign-in">
-    <form><input type="text" name="sign" value="sign"><button type="button"></form>
-  </section>
+<!--I need a sign-in section which will display over the entire page with a transparent backround(use z-index). I need a rounded div that fully dispalys the sign-in Input and go button.-->
 
   <section id="home" class="tab-content home">
     <div class="button-wrap">
@@ -132,5 +135,6 @@
 
   <script src="scripts/controller/routes.js"></script>
   <script src="scripts/menuAnimations.js"></script>
+  <script src="scripts/signin.js"></script>
 </body>
 </html>
