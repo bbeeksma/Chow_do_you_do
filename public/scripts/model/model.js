@@ -30,8 +30,8 @@ var app = app || {};
   }
 
   Recipe.loadRecipes = function(){
-    recipeResults.forEach(function(recipe){
-      Recipe.all.push(new Recipe(recipe));
+    Recipe.all = recipeResults.map(function(recipe){
+      return new Recipe(recipe);
     });
   };
 
