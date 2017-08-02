@@ -35,5 +35,10 @@ var app = app || {};
     });
   };
 
+  Recipe.initializeRecipe = function(){
+    var template = Handlebars.compile('#recipe-template');
+    return template(this);
+  };
+
   module.Recipe = Recipe;
 })(app);
