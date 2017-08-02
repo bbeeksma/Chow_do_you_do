@@ -74,15 +74,15 @@
     </div>
 
     <div id="recipes">
-      <article class="recipe">
+      <article class="recipeResult">
         Recipe 1
         <!--Rendered recipe-->
       </article>
-      <article class="recipe">
+      <article class="recipeResult">
         Recipe 2
         <!--Rendered recipe-->
       </article>
-      <article class="recipe">
+      <article class="recipeResult">
         Recipe 3
         <!--Rendered recipe-->
       </article>
@@ -90,12 +90,15 @@
   </section>
 
   <section id="recipe" class="tab-content recipe">
-    <div class="drop-down off"></div>
+    <i class="fa fa-plus-square-o clickable toggleForm" aria-hidden="true"></i>
+    <h1 class='formChoice'>Choose Your Options</h1>
+    <div class="clear"></div>
+    <div class="expandForm">
     <!--dropdown menu content here-->
       <form id="recipeLookup">
 
-        <label id="chooseIngedient">
-          <input type="text" id="ingredient" name="q" placeholder="Pick an ingredient!">
+        <label id="chooseIngredient">
+          <input type="text" id="ingredient" name="q" placeholder="What do you want to eat?">
         </label>
 
         <fieldset class="diet">
@@ -146,6 +149,7 @@
 
         <button type="submit" id="recipe-search">Search!</button>
       </form>
+    </div>
     <div class="recipe-result-wrap">
       <div class="recipe-result">
         <!--Render recipes here-->

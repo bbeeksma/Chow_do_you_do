@@ -19,3 +19,6 @@ $(document).ready(function(){
   app.Recipe.fetchRandomRecipes();
 
 });
+$('.toggleForm').on('click', function (){
+  $('.expandForm').toggleClass('show');
+});
