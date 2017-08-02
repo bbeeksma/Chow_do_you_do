@@ -1,4 +1,8 @@
 $('.toggleMenu').on('click', function(){
   $('.mainNav').toggleClass('show');
-  $('.toggleMenu').toggleClass('fa-bars').toggleClass('fa-times');
+  $('.toggleMenu').toggleClass('fa-toggle-down').toggleClass('fa-toggle-up');
+});
+
+$(document).ready(function(){
+  $('#home').show();
 });

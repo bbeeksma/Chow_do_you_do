@@ -6,8 +6,8 @@ var app = app || {};
   const recipeController = {};
 
   recipeController.show = () => {
-    $('.tab-content').fadeOut();
-    $('#recipe').fadeIn();
+    $('.tab-content').hide();
+    $('#recipe').show();
   };
   var caloriesMin = '200'; //format as gte%20<number>
   var caloriesMax = '900'; //format as lte%20<number>

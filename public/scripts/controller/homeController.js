@@ -4,8 +4,8 @@ var app = app || {};
 (function(module) {
   const homeController = {};
   homeController.show = () => {
-    $('.tab-content').fadeOut();
-    $('#home').fadeIn();
+    $('.tab-content').hide();
+    $('#home').show();
   };
   module.homeController = homeController;
 })(app);

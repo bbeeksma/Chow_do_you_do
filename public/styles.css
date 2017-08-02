@@ -1,12 +1,94 @@
+/*-------------------------BASE------------------------------*/
+.tab-content{
+  display: none;
+}
+.clear{
+  clear: both;
+}
+.clickable{
+  cursor: pointer;
+}
+header{
+  width:100%;
+  padding-top: 50px;
+  background-size: auto;
+  background-repeat: no-repeat;
+}
+body{
+  background-color: #4281A4;
+}
+/*-----------------------LAYOUT------------------------------*/
+.fa-toggle-down, .fa-toggle-up{
+  width:100%;
+  padding-top: 10px;
+  text-align: center;
+  font-size: 40px;
+  color: #9CAFB7;
+}
+.fa-user-circle{
+  font-size: 50px;
+  width:15%;
+  padding-right: 20px;
+  text-align: right;
+  color: #9CAFB7;
+}
 .mainNav{
   max-height: 0px;
   overflow: hidden;
-  font-size: 30px;
-  max-height: 0px;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
   transition-property: all;
   transition-duration: .5s;
   transition-timing-function: ease;
+  background-color: #4281A4;
 }
+.logo{
+  font-family: 'Anton', sans-serif;
+  width: 100%;
+  text-align: center;
+  font-size: 60px;
+  color: #EAD2AC;
+}
+.button-wrap{
+  display: flex;
+  height: 200px;
+  width: 100%;
+}
+.getRecipes{
+  font-family: 'Lobster', cursive;
+  font-size: 30px;
+  margin: auto auto;
+  color: white;
+  background-color: #FE938C;
+  border-radius: 10px;
+  padding: 20px 70px;
+}
+.navWrapper{
+  text-align: center;
+  width: 100%;
+}
+
+nav li{
+  font-size: 30px;
+  text-align: center;
+}
+.navList{
+  height: 1000px;
+}
+/*---------------------MODULE-------------------------------*/
+nav a{
+  color: #E6B89C;
+  font-family: 'Anton', sans-serif;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  margin: 20px 30px;
+  border: 2px solid #9CAFB7;
+  border-radius: 10px;
+}
+
+/*---------------------STATE--------------------------------*/
 .show{
-  max-height: 300px;
+  max-height: 1000px;
 }
