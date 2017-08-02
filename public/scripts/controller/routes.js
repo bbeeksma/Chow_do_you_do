@@ -29,8 +29,8 @@ alcohol-free
     fat: object.totalNutrients.FAT.unit
 */
 
-var caloriesMin = 'gte%20200'; //format as gte%20<number>
-var caloriesMax = 'lte%20900'; //format as lte%20<number>
+var caloriesMin = '200'; //format as gte%20<number>
+var caloriesMax = '900'; //format as lte%20<number>
 var health = 'peanut-free';
 var diet = 'low-carb';
 var ingredient = 'beef';
@@ -46,7 +46,7 @@ getRecipe = () => {
       ,to: 100
       ,calories:`gte ${caloriesMin}, lte ${caloriesMax}`
       ,health:health
-      ,diet:ingredient
+      ,diet:diet
     }
   }).then(data => {
     recipeResults = data.hits.map(function(item){
