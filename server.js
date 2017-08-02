@@ -49,6 +49,15 @@ app.post('/saved_recipes', function(request, response) {
   );
 });
 
+app.delete('/saved_recipes/:id', (request, response) => {
+  client.query(
+    `DELETE FROM saved_recipes WHERE saved_recipes_id=$1;`,
+    [request.params.id]
+  )
+    .then(() => response.send('Delete complete'))
+    .catch(console.error);
+});
+
 app.delete('/saved_recipes_by_user/:user_id', (request, response) => {
   client.query(
     `DELETE FROM saved_recipes WHERE user_id=$1;`,
