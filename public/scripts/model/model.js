@@ -81,7 +81,7 @@ var app = app || {};
     return template(recipe);
   };
 
-Recipe.initRcipe;
+  Recipe.currentRecipe = 0;
 //use this function to adds a recipe to the page
   Recipe.initRecipes = function(recipes,location){
     Recipe.loadRecipes(recipes);
@@ -98,13 +98,16 @@ Recipe.initRcipe;
     }
   };
 
-  Recipe.getNextRecipe = function(){
-    $('')
-    console.log(currentRecipe);
+  Recipe.getNextRecipe = (e,location) => {
+    Recipe.currentRecipe++;
+    $(e.target).closest('div').empty();
+    $(location).append(Recipe.toHtml(Recipe.all[Recipe.currentRecipe % Recipe.all.length]));
   };
 
   Recipe.getPreviousRecipe = function(){
-
+    Recipe.currentRecipe--;
+    $(e.target).closest('div').empty();
+    $(location).append(Recipe.toHtml(Recipe.all[Recipe.currentRecipe]));
   };
 
   Recipe.deleteRecipe = function(){

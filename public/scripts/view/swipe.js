@@ -25,7 +25,7 @@ function handleTouchMove(event) {
       console.log('swiped left');
       $(this).hide('slide', { direction: 'left' }, 200);
       //TODO:Get next recipe
-      app.Recipe.getNextRecipe();
+      app.Recipe.getNextRecipe(event,$(event.target).closest('div'));
     } else {
       /* right swipe */
       console.log('swiped right');
