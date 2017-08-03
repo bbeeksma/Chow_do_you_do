@@ -22,10 +22,15 @@ function menuAnimations(){
     }
   });
 }
+function formAnimations(){
+  if ($('fa-minus-square-o, fa-plus-square-o').is(':visible')){
+    $('.expandForm').toggleClass('hideMobile');
+  }
+}
 
 $('.toggleForm').on('click', function (){
-  $('.expandForm').toggleClass('hide');
-  $('.toggleForm').toggleClass('fa-minus-square-o').toggleClass('fa-plus-square-o');
+  $('.expandForm').toggleClass('hideMobile');
+  $('.toggleForm').toggleClass('fa-minus-square-o').toggleClass('fa-minus-square-o');
 
 });
 $("input[type='checkbox']").change(function(){
