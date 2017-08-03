@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('./public'));
 
 function proxyEdamam(request, response){
-  request.url = request.url.replace(/%2c/gi, ',');
+  request.url = request.url.replace(/%2c/gi, ','); //HACK: This replaces the url encoded comma %2C with an unencoded comma because the API we are using doesn't recognise the %2C
   console.log('Routing Edamam request for ' + request.url);
   (requestProxy({
     url: 'https://api.edamam.com/search'
