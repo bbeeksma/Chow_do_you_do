@@ -338,6 +338,12 @@ nav a{
     float: right;
     height: 700px;
   }
+  .home-recipe-result-wrap{
+    border: 2px solid white;
+    width: 60%;
+    margin: auto;
+    height: 700px;
+  }
   legend{
     font-size: 40px;
   }
