@@ -25,10 +25,34 @@ function proxyEdamam(request, response){
       app_id: recipeApiId
       ,app_key: recipeApiKey
       ,from: 0
-      ,to: 100
+      ,to: 30
     }
   }))(request, response);
 }
+
+app.get('/saved_recipes:user_name', function(request,response){
+  client.query(
+    `SELECT body
+    FROM saved_recipes s
+    JOIN users u
+    ON s.user_id = u.user_id
+    WHERE u.user_name = $1`,
+    [request.params.user_name]
+  ).then(result => {
+    response.send(result.rows);
+  });
+});
+
+app.get('/users/:user_name', function(request,response){
+  client.query(
+    `SELECT user_id
+    FROM users
+    WHERE user_name = $1;`,
+    [request.params.user_name]
+  ).then(result => {
+    response.send(result.rows);
+  });
+});
 
 app.get('/edamam/*', proxyEdamam);
 app.get('*', (request, response) => response.sendFile('index.html', {root: './public'}));
@@ -45,8 +69,18 @@ app.post('/users', function(request, response) {
 
 app.post('/saved_recipes', function(request, response) {
   client.query(
-    'INSERT INTO saved_recipes(user_id,body,) VALUES($1,$2) ON CONFLICT DO NOTHING',
-    [request.body.user_id,request.body.body],
+    `INSERT INTO saved_recipes
+      (user_id, body)
+    SELECT
+      u.user_id
+      ,$2 AS body
+    FROM users u
+    LEFT JOIN saved_recipes s
+    ON u.user_id = s.user_id
+    WHERE user_name = $1
+    LIMIT 1
+    ON CONFLICT DO NOTHING`,
+    [request.body.user_name,request.body.body],
     function(err) {
       if (err) console.error(err);
     }
@@ -102,7 +136,9 @@ function createTables() {
       saved_recipes_id SERIAL PRIMARY KEY
       ,user_id INTEGER NOT NULL REFERENCES users(user_id)
       ,body TEXT NOT NULL
-      ,created DATETIME DEFAULT NOW()
+      ,created DATE DEFAULT NOW()
     );`
   );
 }
+
+createTables();
