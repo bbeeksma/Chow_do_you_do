@@ -19,3 +19,11 @@ $(document).ready(function(){
   app.Recipe.fetchRandomRecipes();
 
 });
+$('.toggleForm').on('click', function (){
+  $('.expandForm').toggleClass('hide');
+  $('.toggleForm').toggleClass('fa-minus-square-o').toggleClass('fa-plus-square-o');
+
+});
+$("input[type='checkbox']").change(function(){
+  $(this).parent().toggleClass('selected');
+});

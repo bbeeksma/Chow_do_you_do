@@ -78,15 +78,19 @@
   </section>
 
   <section id="recipe" class="tab-content recipe">
-    <div class="drop-down off"></div>
+    <i class="fa fa-minus-square-o clickable toggleForm" aria-hidden="true"></i>
+    <h1 class='formChoice'>Choose Your Options</h1>
+    <div class="clear"></div>
+    <div class="expandForm">
     <!--dropdown menu content here-->
       <form id="recipeLookup">
 
-        <label id="chooseIngedient">
-          <input type="text" id="ingredient" name="q" placeholder="Pick an ingredient!">
+        <label id="chooseIngredient">
+          <input type="text" id="ingredient" name="q" placeholder="What do you want to eat?">
         </label>
 
         <fieldset class="diet">
+          <legend>Health Options - Choose as many as you like!</legend>
           <label class="dietaryRestriction">
             <input type="checkbox" name="diet" value="balanced"> Balanced
           </label>
@@ -101,6 +105,7 @@
           </label>
         </fieldset>
         <fieldset class="health">
+          <legend>Dietary Choices - Choose as many as you like!</legend>
           <label class="dietaryRestriction">
             <input type="checkbox" name="health" value="vegan"> Vegan
           </label>
@@ -134,6 +139,7 @@
 
         <button type="submit" id="recipe-search">Search!</button>
       </form>
+    </div>
     <div class="recipe-result-wrap">
       <div class="recipe-result">
         <!--Render recipes here-->
