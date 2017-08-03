@@ -89,8 +89,7 @@ var app = app || {};
     console.log(onHome);
     if (localStorage.userName && onHome > -1){
       console.log('userName exists');
-      $('#home .hrTry span').innertext = 'Your Saved Recipes';
-      console.log($('#home .hrTry span').html());
+      $('#home .hrTry span').text('Your Saved Recipes');
       Recipe.all.forEach(function(item){
         $(location).append(Recipe.toHtml(item));
       });
