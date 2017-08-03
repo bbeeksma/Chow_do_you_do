@@ -33,8 +33,8 @@
   <section class="sign-in">
     <div class="go">
       <form id="sign-in-form">
-        <input type="text" name="sign-in" placeholder="sign-in">
-        <div><button type="submit">GO!</button></div>
+        <input id="username" type="text" name="sign-in" placeholder="sign-in">
+        <div><button id="submit-username" type="submit">GO!</button></div>
       </form>
     </div>
     <div class="z-index-3"></div>
@@ -86,7 +86,7 @@
 
   </section>
 
-  <section id="recipe" class="tab-content recipe">
+  <section id="recipe" class="tab-content">
     <div class='formWrapper'>
       <i class="fa fa-minus-square-o clickable toggleForm" aria-hidden="true"></i>
       <h1 class='formChoice'>Choose Your Options</h1>
@@ -205,6 +205,7 @@
   <script src="scripts/controller/recipeController.js"></script>
 
   <script src="scripts/controller/routes.js"></script>
+  <script src="scripts/controller/signIn.js"></script>
   <script src="scripts/model/model.js"></script>
   <script src="scripts/view/menuAnimations.js"></script>
   <script src="scripts/view/swipe.js"></script>

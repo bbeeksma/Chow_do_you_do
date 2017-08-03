@@ -4,10 +4,6 @@ $(document).ready(function(){
   $('.sign-in').show();
 
   $('#home').show();
-  $('#sign-in-form').submit(function(e){
-    e.preventDefault();
-    $('.sign-in').hide();
-  });
   app.recipeController.submitListener();
   menuAnimations();
   $('.getRecipes').on('click', function(){
@@ -15,8 +11,9 @@ $(document).ready(function(){
     $('#recipe').fadeIn();
   });
 
-  app.Recipe.fetchRandomRecipes();
-
+  app.Recipe.fetchRecipes();
+  $(document).on('touchstart', '.recipe', handleTouchStart);
+  $(document).on('touchmove', '.recipe', handleTouchMove);
 });
 
 function menuAnimations(){

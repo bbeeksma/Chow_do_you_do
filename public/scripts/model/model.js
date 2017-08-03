@@ -31,7 +31,7 @@ var app = app || {};
     }
   }
 
-  Recipe.fetchRandomRecipes = function(){
+  Recipe.fetchRecipes = function(){
     var recipeResults;
     $.getJSON('../assets/starterRecipes.json',function(data){
       recipeResults = data;
@@ -81,16 +81,43 @@ var app = app || {};
     return template(recipe);
   };
 
-  Recipe.getRandomRecipe = function(){
-    return Math.floor(Math.random() * Recipe.all.length);
-  };
-
+  Recipe.currentRecipe = 0;
 //use this function to adds a recipe to the page
   Recipe.initRecipes = function(recipes,location){
     Recipe.loadRecipes(recipes);
     $(location).empty();
-    var thisRecipe = Recipe.getRandomRecipe();
-    $(location).append(Recipe.toHtml(Recipe.all[thisRecipe]));
+    var onHome = location.search('#home');
+    if (localStorage.userName && onHome > -1){
+      $('#home .hrTry span').text('Your Saved Recipes');
+      Recipe.all.forEach(function(item){
+        $(location).append(Recipe.toHtml(item));
+      });
+    } else {
+      Recipe.initRecipe = Recipe.all[0];
+      $(location).append(Recipe.toHtml(Recipe.all[0]));
+    }
+  };
+
+  Recipe.getNextRecipe = (e,location) => {
+    Recipe.currentRecipe++;
+    $(e.target).closest('div').empty();
+    $(location).append(Recipe.toHtml(Recipe.all[Math.abs(Recipe.currentRecipe % Recipe.all.length)]));
+  };
+
+  Recipe.getPreviousRecipe = function(e,location){
+    Recipe.currentRecipe--;
+    $(e.target).closest('div').empty();
+    $(location).append(Recipe.toHtml(Recipe.all[Math.abs(Recipe.currentRecipe % Recipe.all.length)]));
+  };
+
+  Recipe.discardRecipe = function(e,location){
+    console.log(Recipe.currentRecipe);
+    Recipe.all.splice(Math.abs(Recipe.currentRecipe % Recipe.all.length), 1);
+    $(e.target).closest('div').empty();
+    $(location).append(Recipe.toHtml(Recipe.all[Math.abs(Recipe.currentRecipe % Recipe.all.length)]));
+  };
+
+  Recipe.saveRecipe = function(){
   };
 
   module.Recipe = Recipe;
