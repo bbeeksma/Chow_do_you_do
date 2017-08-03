@@ -3,14 +3,7 @@ $(document).ready(function(){
   $('#home').show();
 
   app.recipeController.submitListener();
-  $('.toggleMenu').on('click', function(){
-    $('.mainNav').toggleClass('show');
-    $('.toggleMenu').toggleClass('fa-toggle-down').toggleClass('fa-toggle-up');
-  });
-  $('.mainNav a').on('click', function(){
-    $('.mainNav').toggleClass('show');
-    $('.toggleMenu').toggleClass('fa-toggle-down').toggleClass('fa-toggle-up');
-  });
+  menuAnimations();
   $('.getRecipes').on('click', function(){
     $('.tab-content').hide();
     $('#recipe').fadeIn();
@@ -19,6 +12,16 @@ $(document).ready(function(){
   app.Recipe.fetchRandomRecipes();
 
 });
+
+function menuAnimations(){
+  $('.toggleMenu, .mainNav a').on('click', function(){
+    if ($('.fa-toggle-down, .fa-toggle-up').is(':visible')){
+      $('.mainNav').toggleClass('show');
+      $('.toggleMenu').toggleClass('fa-toggle-down').toggleClass('fa-toggle-up');
+    }
+  });
+}
+
 $('.toggleForm').on('click', function (){
   $('.expandForm').toggleClass('hide');
   $('.toggleForm').toggleClass('fa-minus-square-o').toggleClass('fa-plus-square-o');
