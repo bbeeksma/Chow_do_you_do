@@ -170,6 +170,7 @@ nav li{
   justify-content: center;
   padding: 10px 0px;
   margin:auto auto;
+  user-select: none;
 }
 .dietaryRestriction input[type="checkbox"]{
   display: none;
@@ -291,6 +292,17 @@ nav a{
     left: 100%;
     margin-left: 15px;
   }
+  .fa-plus-square-o, .fa-minus-square-o{
+    display: none;
+}
+.formChoice{
+  text-align: center;
+  float: left;
+}
+.expandForm{
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
 }
 nav a{
   color: #E6B89C;

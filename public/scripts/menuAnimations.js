@@ -1,5 +1,6 @@
 
 $(document).ready(function(){
+  $('.tab-content').hide();
   $('#home').show();
 
   app.recipeController.submitListener();
