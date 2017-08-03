@@ -247,6 +247,9 @@ nav a{
   max-height: 0px;
   overflow: hidden;
 }
+.showFull{
+  display: none;
+}
 @media (min-width: 600px){
   header{
     border-bottom: 2px solid #9CAFB7;
@@ -353,5 +356,8 @@ nav a{
   .hideMobile{
     max-height: none;
     overflow: hidden;
+  }
+  .showFull{
+    display: inline;
   }
 }
