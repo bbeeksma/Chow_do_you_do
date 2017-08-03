@@ -35,7 +35,7 @@ var app = app || {};
       recipeResults = data;
       console.log('Recipes ', recipeResults);
     }).then(function(){
-      Recipe.initRecipes(recipeResults,'#home');
+      Recipe.initRecipes(recipeResults,'section#home #recipes');
     });
   };
 
