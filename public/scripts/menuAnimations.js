@@ -20,7 +20,9 @@ $(document).ready(function(){
 
 });
 $('.toggleForm').on('click', function (){
-  $('.expandForm').toggleClass('show');
+  $('.expandForm').toggleClass('hide');
+  $('.toggleForm').toggleClass('fa-minus-square-o').toggleClass('fa-plus-square-o');
+
 });
 $("input[type='checkbox']").change(function(){
   $(this).parent().toggleClass('selected');

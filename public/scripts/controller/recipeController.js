@@ -30,6 +30,7 @@ var app = app || {};
       e.preventDefault();
       var values = $(this).serialize();
       console.log(values);
+      $('.expandForm').toggleClass('hide');
       recipeController.getRecipe(values);
     });
   };
