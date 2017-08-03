@@ -39,10 +39,7 @@ var app = app || {};
   };
 
   Recipe.saveRecipe = (bodyString) => {
-    $.get(`/users/${window.localStorage.userName}`).then((results) => {
-      console.log(`user_id: ${results[0].user_id}, body: ${bodyString}`);
-      $.post('/saved_recipes', {user_id: results[0].user_id, body: bodyString});
-    });
+    $.post('/saved_recipes', {user_name: window.localStorage.userName, body: bodyString});
   };
 
  //returns ingredients as a list of <li> elements to append with the tmplate

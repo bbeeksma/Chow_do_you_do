@@ -68,10 +68,18 @@ app.post('/users', function(request, response) {
 });
 
 app.post('/saved_recipes', function(request, response) {
-  console.log(request.body.user_id,request.body.body);
   client.query(
-    'INSERT INTO saved_recipes (user_id, body) VALUES($1,$2) ON CONFLICT DO NOTHING',
-    [request.body.user_id,request.body.body],
+    `INSERT INTO saved_recipes
+      (user_id, body)
+    SELECT
+      u.user_id
+      ,$2 AS body
+    FROM users u
+    LEFT JOIN saved_recipes s
+    ON u.user_id = s.user_id
+    WHERE user_name = $1
+    ON CONFLICT DO NOTHING`,
+    [request.body.user_name,request.body.body],
     function(err) {
       if (err) console.error(err);
     }
