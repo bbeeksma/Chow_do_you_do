@@ -1,3 +1,4 @@
+//Event handlers to listen for swiping on recipe-result class
 $('.recipe-result').on('touchstart', handleTouchStart);
 $('.recipe-result').on('touchmove', handleTouchMove);
 
