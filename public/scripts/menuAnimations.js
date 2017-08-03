@@ -29,7 +29,8 @@ function menuAnimations(){
 }
 function formAnimations(){
   if ($('.fa-minus-square-o, .fa-plus-square-o').is(':visible')){
-    $('.expandForm').toggleClass('hideMobile').toggleClass('fa-minus-square-o').toggleClass('fa-plus-square-o');
+    $('.expandForm').toggleClass('hideMobile');
+    $('.toggleForm').toggleClass('fa-minus-square-o').toggleClass('fa-plus-square-o');
   }
 }
 
