@@ -29,7 +29,7 @@ var app = app || {};
       e.preventDefault();
       var values = $(this).serialize();
       console.log(values);
-      $('.expandForm').toggleClass('hide');
+      formAnimations();
       recipeController.getRecipe(values);
     });
   };

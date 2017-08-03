@@ -10,17 +10,25 @@
 }
 header{
   width:100%;
+  max-width: 1500px;
   padding-top: 50px;
+  margin: auto;
   background-color: inherit;
   position: relative;
 }
 body{
   background-color: #4281A4;
+  max-width: 1500px;
+  margin: auto;
 }
 footer{
   width: 100%;
   height: 100px;
-  margin-top: 20px;
+  margin-top: 20px auto;
+  max-width: 1500px;
+}
+br{
+  display: none;
 }
 /*-----------------------LAYOUT------------------------------*/
 .fa-toggle-down, .fa-toggle-up{
@@ -144,7 +152,6 @@ nav li{
 }
 #recipe{
   margin: 30px 20px;
-
 }
 .formChoice{
   font-family: 'Lobster', cursive;
@@ -170,6 +177,7 @@ nav li{
   justify-content: center;
   padding: 10px 0px;
   margin:auto auto;
+  user-select: none;
 }
 .dietaryRestriction input[type="checkbox"]{
   display: none;
@@ -206,7 +214,6 @@ nav a{
   border: 2px solid #9CAFB7;
   border-radius: 10px;
 }
-
 /*---------------------STATE--------------------------------*/
 .show{
   max-height: 1000px;
@@ -220,4 +227,110 @@ nav a{
 .hide{
   max-height: 0px;
   overflow: hidden;
+}
+.hideMobile{
+  max-height: 0px;
+  overflow: hidden;
+}
+@media (min-width: 600px){
+  header{
+    border-bottom: 2px solid #9CAFB7;
+  }
+  .fa-toggle-down, .fa-toggle-up{
+    display: none;
+  }
+  .fa-user-circle{
+    font-size: 50px;
+    width:15%;
+    padding-right: 20px;
+    text-align: right;
+    color: #9CAFB7;
+  }
+  .mainNav{
+    position: relative;
+    width: 100%;
+    max-height: 75px;
+  }
+  .logo{
+    font-family: 'Anton', sans-serif;
+    width: 100%;
+    text-align: center;
+    font-size: 80px;
+    color: #EAD2AC;
+  }
+  .button-wrap{
+    display: flex;
+    height: 200px;
+    width: 100%;
+  }
+  .navWrapper{
+    height: 75px;
+    width: 100%;
+  }
+
+  nav li{
+    font-size: 30px;
+    display: inline;
+  }
+  .navList{
+    height: 1000px;
+  }
+  nav a{
+    display: inline-block;
+    border: none;
+  }
+  .getRecipes{
+    font-family: 'Lobster', cursive;
+    font-size: 45px;
+    margin: auto auto;
+    color: white;
+    background-color: #FE938C;
+    border-radius: 20px;
+    padding: 30px 300px;
+    border: 2px solid;
+  }
+  .hrTry {
+    font-size: 30px;
+  }
+
+  .hrTry > span:before,
+  .hrTry > span:after {
+    width: 9999%;
+  }
+  .fa-plus-square-o, .fa-minus-square-o{
+    display: none;
+  }
+  .formWrapper{
+    width: 30%;
+    float: left;
+  }
+  .formChoice{
+    text-align: center;
+    float: none;
+  }
+  .expandForm{
+    width: 100%;
+    display: block;
+  }
+  .dietaryRestriction{
+    font-size: 30px;
+    padding: 10px 25px;
+    display: inline-block;
+  }
+  .recipe-result-wrap{
+    border: 2px solid white;
+    width: 60%;
+    float: right;
+    height: 700px;
+  }
+  legend{
+    font-size: 40px;
+  }
+  br{
+    display: inline;
+  }
+  .hideMobile{
+    max-height: none;
+    overflow: hidden;
+  }
 }

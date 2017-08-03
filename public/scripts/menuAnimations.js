@@ -1,20 +1,15 @@
 $(document).ready(function(){
-  //later I will need to check local storage before rendering it.
+
+  $('.tab-content').hide();
   $('.sign-in').show();
+
   $('#home').show();
   $('#sign-in-form').submit(function(e){
     e.preventDefault();
     $('.sign-in').hide();
   });
   app.recipeController.submitListener();
-  $('.toggleMenu').on('click', function(){
-    $('.mainNav').toggleClass('show');
-    $('.toggleMenu').toggleClass('fa-toggle-down').toggleClass('fa-toggle-up');
-  });
-  $('.mainNav a').on('click', function(){
-    $('.mainNav').toggleClass('show');
-    $('.toggleMenu').toggleClass('fa-toggle-down').toggleClass('fa-toggle-up');
-  });
+  menuAnimations();
   $('.getRecipes').on('click', function(){
     $('.tab-content').hide();
     $('#recipe').fadeIn();
@@ -23,8 +18,24 @@ $(document).ready(function(){
   app.Recipe.fetchRandomRecipes();
 
 });
+
+function menuAnimations(){
+  $('.toggleMenu, .mainNav a').on('click', function(){
+    if ($('.fa-toggle-down, .fa-toggle-up').is(':visible')){
+      $('.mainNav').toggleClass('show');
+      $('.toggleMenu').toggleClass('fa-toggle-down').toggleClass('fa-toggle-up');
+    }
+  });
+}
+function formAnimations(){
+  if ($('.fa-minus-square-o, .fa-plus-square-o').is(':visible')){
+    $('.expandForm').toggleClass('hideMobile');
+    $('.toggleForm').toggleClass('fa-minus-square-o').toggleClass('fa-plus-square-o');
+  }
+}
+
 $('.toggleForm').on('click', function (){
-  $('.expandForm').toggleClass('hide');
+  $('.expandForm').toggleClass('hideMobile');
   $('.toggleForm').toggleClass('fa-minus-square-o').toggleClass('fa-plus-square-o');
 
 });
