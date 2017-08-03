@@ -1,7 +1,11 @@
-
 $(document).ready(function(){
+  //later I will need to check local storage before rendering it.
+  $('.sign-in').show();
   $('#home').show();
-
+  $('#sign-in-form').submit(function(e){
+    e.preventDefault();
+    $('.sign-in').hide();
+  });
   app.recipeController.submitListener();
   $('.toggleMenu').on('click', function(){
     $('.mainNav').toggleClass('show');
