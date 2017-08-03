@@ -1,221 +1,283 @@
-[
-	{
-		"label": "coming soon",
-		"image": "https://static.pexels.com/photos/70497/pexels-photo-70497.jpeg",
-		"yield": "coming soon",
-		"calories": "coming soon",
-		"url": "coming soon",
-		"ingredientLines": ["chicken","cheese"],
+[{
+		"label": "Rosemary Tisane Recipe",
+		"image": "https://www.edamam.com/web-img/ec8/ec80e73dc779b237037706190565d908.jpg",
+		"yield": 1,
+		"calories": 340.51941802978513,
+		"url": "http://leitesculinaria.com/44980/recipes-rosemary-tisane-tea.html",
+		"ingredientLines": [
+			"4 to 6 sprigs of rosemary, or 6 tablespoons orange pekoe tea leaves in a diffuser",
+			"1 to 2 teaspoons honey, at room temperature"
+		],
 		"totalNutrients": {
 			"CHOCDF": {
-				"quantity": "coming soon",
-				"unit": "coming soon"
+				"quantity": 85.81763172912596,
+				"unit": "g"
 			},
 			"PROCNT": {
-				"quantity": "coming soon",
-				"unit": "coming soon"
+				"quantity": 6.189239557266235,
+				"unit": "g"
 			},
 			"FAT": {
-				"quantity": "coming soon",
-				"unit": "coming soon"
+				"quantity": 0.7859999999999999,
+				"unit": "g"
 			}
 		}
 	},
 	{
-		"label": "coming soon",
-		"image": "https://static.pexels.com/photos/70497/pexels-photo-70497.jpeg",
-		"yield": "coming soon",
-		"calories": "coming soon",
-		"url": "coming soon",
-		"ingredientLines": ["chicken","cheese"],
+		"label": "Roast Chicken",
+		"image": "https://www.edamam.com/web-img/b53/b5320d396f73f8f59d8544474bd2099f.jpg",
+		"yield": 4,
+		"calories": 2196.8838068857763,
+		"url": "http://www.finecooking.com/recipes/roast-chicken.aspx",
+		"ingredientLines": [
+			"1-1/2 tbs. olive oil",
+			"2 tsp. granulated sugar",
+			"Fresh whole chicken crazy split whole chicken leg 3-1/2 to 4-lb. whole chicken",
+			"Freshly ground black pepper",
+			"2 tbs. kosher salt"
+		],
 		"totalNutrients": {
 			"CHOCDF": {
-				"quantity": "coming soon",
-				"unit": "coming soon"
+				"quantity": 10.274986729180336,
+				"unit": "g"
 			},
 			"PROCNT": {
-				"quantity": "coming soon",
-				"unit": "coming soon"
+				"quantity": 171.4249033819994,
+				"unit": "g"
 			},
 			"FAT": {
-				"quantity": "coming soon",
-				"unit": "coming soon"
+				"quantity": 158.8976674711567,
+				"unit": "g"
 			}
 		}
 	},
 	{
-		"label": "coming soon",
-		"image": "https://static.pexels.com/photos/70497/pexels-photo-70497.jpeg",
-		"yield": "coming soon",
-		"calories": "coming soon",
-		"url": "coming soon",
-		"ingredientLines": ["chicken","cheese"],
+		"label": "Baked Chicken",
+		"image": "https://www.edamam.com/web-img/5ba/5ba034e3b94a1c3b10536034a4a43713.jpg",
+		"yield": 4,
+		"calories": 1979.4857499700784,
+		"url": "http://www.marthastewart.com/318981/baked-chicken",
+		"ingredientLines": [
+			"6 bone-in chicken breast halves, or 6 chicken thighs and wings, skin-on",
+			"1/2 teaspoon coarse salt",
+			"1/2 teaspoon mrs. dash seasoning",
+			"1/4 teaspoon freshly ground black pepper"
+		],
 		"totalNutrients": {
 			"CHOCDF": {
-				"quantity": "coming soon",
-				"unit": "coming soon"
+				"quantity": 3.094637492376566,
+				"unit": "g"
 			},
 			"PROCNT": {
-				"quantity": "coming soon",
-				"unit": "coming soon"
+				"quantity": 147.8204674987614,
+				"unit": "g"
 			},
 			"FAT": {
-				"quantity": "coming soon",
-				"unit": "coming soon"
+				"quantity": 148.56861999961137,
+				"unit": "g"
 			}
 		}
 	},
 	{
-		"label": "coming soon",
-		"image": "https://static.pexels.com/photos/70497/pexels-photo-70497.jpeg",
-		"yield": "coming soon",
-		"calories": "coming soon",
-		"url": "coming soon",
-		"ingredientLines": ["chicken","cheese"],
+		"label": "Roast Beef",
+		"image": "https://www.edamam.com/web-img/98a/98aa5d5cc0d88b28c2b9221a099b1a14.jpg",
+		"yield": 8,
+		"calories": 28811.23488,
+		"url": "http://www.saveur.com/article/Recipes/Roast-Beef",
+		"ingredientLines": [
+			"8-lb. shell roast of beef",
+			"Coarse salt and freshly ground black pepper"
+		],
 		"totalNutrients": {
 			"CHOCDF": {
-				"quantity": "coming soon",
-				"unit": "coming soon"
+				"quantity": 27.810576,
+				"unit": "g"
 			},
 			"PROCNT": {
-				"quantity": "coming soon",
-				"unit": "coming soon"
+				"quantity": 3006.6400032000006,
+				"unit": "g"
 			},
 			"FAT": {
-				"quantity": "coming soon",
-				"unit": "coming soon"
+				"quantity": 1762.6817088,
+				"unit": "g"
 			}
 		}
 	},
 	{
-		"label": "coming soon",
-		"image": "https://static.pexels.com/photos/70497/pexels-photo-70497.jpeg",
-		"yield": "coming soon",
-		"calories": "coming soon",
-		"url": "coming soon",
-		"ingredientLines": ["chicken","cheese"],
+		"label": "Beef Tenderloin",
+		"image": "https://www.edamam.com/web-img/e30/e30b4eddc7b3c0cfa19aa81662fcf68a.jpg",
+		"yield": 8,
+		"calories": 2917.5736859033204,
+		"url": "http://www.marthastewart.com/344408/beef-tenderloin",
+		"ingredientLines": [
+			"2 1/2 pounds center-cut beef tenderloin, tied by your butcher",
+			"1 tablespoon olive oil",
+			"Coarse salt and ground pepper",
+			"Horseradish cream, optional",
+			"Bearnaise sauce, optional"
+		],
 		"totalNutrients": {
 			"CHOCDF": {
-				"quantity": "coming soon",
-				"unit": "coming soon"
+				"quantity": 2.2014422160644536,
+				"unit": "g"
 			},
 			"PROCNT": {
-				"quantity": "coming soon",
-				"unit": "coming soon"
+				"quantity": 225.11269549790038,
+				"unit": 216.36801875478514
 			},
 			"FAT": {
-				"quantity": "coming soon",
-				"unit": "coming soon"
+				"quantity": 216.36801875478514,
+				"unit": "g"
 			}
 		}
 	},
 	{
-		"label": "coming soon",
-		"image": "https://static.pexels.com/photos/70497/pexels-photo-70497.jpeg",
-		"yield": "coming soon",
-		"calories": "coming soon",
-		"url": "coming soon",
-		"ingredientLines": ["chicken","cheese"],
+		"label": "Dessert Pancakes",
+		"image": "https://www.edamam.com/web-img/50f/50f8d56addf0e9b0077bb49525f0532a.jpg",
+		"yield": 10,
+		"calories": 2558.9968921756745,
+		"url": "http://www.wolfgangpuck.com/recipes/desserts/Dessert-Pancakes",
+		"ingredientLines": [
+			"1 1/2 cups cups all-purpose flour",
+			"2 tsps baking powder",
+			"1 tsp baking soda",
+			"1/4 cup sugar",
+			"1/8 tsp salt",
+			"2 eggs",
+			"1 1/2 cups buttermilk, or 1 cup buttermilk and cup milk",
+			"1/4 cup melted unsalted butter",
+			"1 tsp vanilla extract",
+			"1 cup dried apricot jam",
+			"1/2 cup whipped cream or cr me fraiche"
+		],
 		"totalNutrients": {
 			"CHOCDF": {
-				"quantity": "coming soon",
-				"unit": "coming soon"
+				"quantity": 432.6856866974831,
+				"unit": "g"
 			},
 			"PROCNT": {
-				"quantity": "coming soon",
-				"unit": "coming soon"
+				"quantity": 53.682851921081536,
+				"unit": "g"
 			},
 			"FAT": {
-				"quantity": "coming soon",
-				"unit": "coming soon"
+				"quantity": 74.50944697742463,
+				"unit": "g"
 			}
 		}
 	},
 	{
-		"label": "coming soon",
-		"image": "https://static.pexels.com/photos/70497/pexels-photo-70497.jpeg",
-		"yield": "coming soon",
-		"calories": "coming soon",
-		"url": "coming soon",
-		"ingredientLines": ["chicken","cheese"],
+		"label": "Easy Sticky-Toffee Dessert",
+		"image": "https://www.edamam.com/web-img/fa0/fa07541bfff5790320bfab814fb57500.jpg",
+		"yield": 6,
+		"calories": 2709.2755288124085,
+		"url": "http://www.cookstr.com/Dessert/Easy-Sticky-Toffee-Dessert",
+		"ingredientLines": [
+			"Scant 1/3 cup dark brown sugar, packed",
+			"1 cup plus 2 tablespoons self-rising flour",
+			"½ cup whole milk",
+			"1 egg",
+			"1 teaspoon vanilla extract",
+			"¼ cup unsalted butter, melted",
+			"¾ cup plus 2 tablespoons chopped, rolled dates",
+			"¾ cup dark brown sugar, packed",
+			"Approx. 2 tablespoons unsalted butter in little blobs",
+			"2¼ cups boiling water"
+		],
 		"totalNutrients": {
 			"CHOCDF": {
-				"quantity": "coming soon",
-				"unit": "coming soon"
+				"quantity": 492.96952130842203,
+				"unit": "g"
 			},
 			"PROCNT": {
-				"quantity": "coming soon",
-				"unit": "coming soon"
+				"quantity": 27.75697045898438,
+				"unit": "g"
 			},
 			"FAT": {
-				"quantity": "coming soon",
-				"unit": "coming soon"
+				"quantity": 78.7841536945343,
+				"unit": "g"
 			}
 		}
 	},
 	{
-		"label": "coming soon",
-		"image": "https://static.pexels.com/photos/70497/pexels-photo-70497.jpeg",
-		"yield": "coming soon",
-		"calories": "coming soon",
-		"url": "coming soon",
-		"ingredientLines": ["chicken","cheese"],
+		"label": "Pork Quesadillas",
+		"image": "https://www.edamam.com/web-img/310/3109aa67eaebff453982004a29ae61f5.jpg",
+		"yield": 4,
+		"calories": 1892.9147736978532,
+		"url": "http://www.marthastewart.com/862754/pork-quesadillas",
+		"ingredientLines": [
+			"1 cup reserved roasted vegetables (from pork chops with fennel and carrots), coarsely chopped",
+			"1 tablespoon chopped pickled jalapenos",
+			"4 large flour tortillas",
+			"2 reserved cooked pork chops (from pork chops with fennel and carrots)",
+			"3 1/2 ounces monterey jack cheese, grated (1 cup)"
+		],
 		"totalNutrients": {
 			"CHOCDF": {
-				"quantity": "coming soon",
-				"unit": "coming soon"
+				"quantity": 134.1084975529671,
+				"unit": "g"
 			},
 			"PROCNT": {
-				"quantity": "coming soon",
-				"unit": "coming soon"
+				"quantity": 132.7949256574154,
+				"unit": "g"
 			},
 			"FAT": {
-				"quantity": "coming soon",
-				"unit": "coming soon"
+				"quantity": 89.22111262993812,
+				"unit": "g"
 			}
 		}
 	},
 	{
-		"label": "coming soon",
-		"image": "https://static.pexels.com/photos/70497/pexels-photo-70497.jpeg",
-		"yield": "coming soon",
-		"calories": "coming soon",
-		"url": "coming soon",
-		"ingredientLines": ["chicken","cheese"],
+		"label": "Summer Pork & Potatoes",
+		"image": "https://www.edamam.com/web-img/bf6/bf6c09ef81f37f84b5316289775888a5.jpg",
+		"yield": 4,
+		"calories": 4903.685,
+		"url": "http://www.bbcgoodfood.com/recipes/2443/summer-pork-and-potatoes",
+		"ingredientLines": [
+			"500.0g vine-ripened tomatoes",
+			"750.0g new potatoes",
+			"2 garlic cloves",
+			"4 pork chops or steaks",
+			"3-4 sprigs rosemary"
+		],
 		"totalNutrients": {
 			"CHOCDF": {
-				"quantity": "coming soon",
-				"unit": "coming soon"
+				"quantity": 156.08109999999996,
+				"unit": "g"
 			},
 			"PROCNT": {
-				"quantity": "coming soon",
-				"unit": "coming soon"
+				"quantity": 389.31085,
+				"unit": "g"
 			},
 			"FAT": {
-				"quantity": "coming soon",
-				"unit": "coming soon"
+				"quantity": 294.63570000000004,
+				"unit": "g"
 			}
 		}
 	},
 	{
-		"label": "coming soon",
-		"image": "https://static.pexels.com/photos/70497/pexels-photo-70497.jpeg",
-		"yield": "coming soon",
-		"calories": "coming soon",
-		"url": "coming soon",
-		"ingredientLines": ["chicken","cheese"],
+		"label": "Smoked Pork Salad",
+		"image": "https://www.edamam.com/web-img/2fa/2fae59b40117c6dda892eb5883d7b143.jpg",
+		"yield": 4,
+		"calories": 920.0647219848632,
+		"url": "https://food52.com/recipes/6947-smoked-pork-salad",
+		"ingredientLines": [
+			"1 head of romaine, chopped",
+			"2 cups smoked pork, chopped",
+			"4 ounces barbecue sauce",
+			"24 baby carrots"
+		],
 		"totalNutrients": {
 			"CHOCDF": {
-				"quantity": "coming soon",
-				"unit": "coming soon"
+				"quantity": 86.60380299606324,
+				"unit": "g"
 			},
 			"PROCNT": {
-				"quantity": "coming soon",
-				"unit": "coming soon"
+				"quantity": 36.87040799331665,
+				"unit": "g"
 			},
 			"FAT": {
-				"quantity": "coming soon",
-				"unit": "coming soon"
+				"quantity": 63.46366437225342,
+				"unit": "g"
 			}
 		}
 	}

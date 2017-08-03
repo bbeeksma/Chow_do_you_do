@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="styles.css" type="text/css"/>
   <script src="https://developer.edamam.com/attribution/badge.js"></script>
   <script id="recipe-template" type="text/x-handlebars-template">
-    <article>
+    <article class="recipe">
       <h2>{{name}}</h2>
       <img src="{{image}}"/>
       <ul>
@@ -73,20 +73,8 @@
     <span>Or Try These!</span>
     </div>
 
-    <div id="recipes">
-      <article class="recipe">
-        Recipe 1
-        <!--Rendered recipe-->
-      </article>
-      <article class="recipe">
-        Recipe 2
-        <!--Rendered recipe-->
-      </article>
-      <article class="recipe">
-        Recipe 3
-        <!--Rendered recipe-->
-      </article>
-    </div>
+    <div id="recipes"></div>
+    
   </section>
 
   <section id="recipe" class="tab-content recipe">
