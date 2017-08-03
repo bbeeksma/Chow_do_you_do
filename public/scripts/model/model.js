@@ -35,7 +35,7 @@ var app = app || {};
       recipeResults = data;
       console.log('Recipes ', recipeResults);
     }).then(function(){
-      Recipe.initRecipes(recipeResults,'#home');
+      Recipe.initRecipes(recipeResults,'section#home #recipes');
     });
   };
 
@@ -66,16 +66,14 @@ var app = app || {};
     return Math.floor(Math.random() * Recipe.all.length);
   };
 
-//use this function to add recipes to the page
+//use this function to adds a recipe to the page
   Recipe.initRecipes = function(recipes,location){
     console.log(recipes);
     Recipe.loadRecipes(recipes);
     $(location).empty();
-    for (var i = 0; i < 3; i++){
-      var thisRecipe = Recipe.getRandomRecipe();
-      console.log(i,thisRecipe);
-      $(location).append(Recipe.toHtml(Recipe.all[thisRecipe]));
-    }
+    var thisRecipe = Recipe.getRandomRecipe();
+    console.log(thisRecipe);
+    $(location).append(Recipe.toHtml(Recipe.all[thisRecipe]));
   };
 
   module.Recipe = Recipe;

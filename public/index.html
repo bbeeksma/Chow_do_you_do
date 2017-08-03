@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="styles.css" type="text/css"/>
   <script src="https://developer.edamam.com/attribution/badge.js"></script>
   <script id="recipe-template" type="text/x-handlebars-template">
-    <article>
+    <article class="recipe">
       <h2>{{name}}</h2>
       <img src="{{image}}"/>
       <ul>
@@ -73,20 +73,8 @@
     <span>Or Try These!</span>
     </div>
 
-    <div id="recipes">
-      <article class="recipeResult">
-        Recipe 1
-        <!--Rendered recipe-->
-      </article>
-      <article class="recipeResult">
-        Recipe 2
-        <!--Rendered recipe-->
-      </article>
-      <article class="recipeResult">
-        Recipe 3
-        <!--Rendered recipe-->
-      </article>
-    </div>
+    <div id="recipes"></div>
+    
   </section>
 
   <section id="recipe" class="tab-content recipe">
@@ -187,6 +175,7 @@
   </footer>
   <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js'></script>
 
   <script src="scripts/controller/aboutController.js"></script>
@@ -197,5 +186,6 @@
   <script src="scripts/controller/routes.js"></script>
   <script src="scripts/model/model.js"></script>
   <script src="scripts/menuAnimations.js"></script>
+  <script src="scripts/swipe.js"></script>
 </body>
 </html>
