@@ -78,6 +78,7 @@ app.post('/saved_recipes', function(request, response) {
     LEFT JOIN saved_recipes s
     ON u.user_id = s.user_id
     WHERE user_name = $1
+    LIMIT 1
     ON CONFLICT DO NOTHING`,
     [request.body.user_name,request.body.body],
     function(err) {
