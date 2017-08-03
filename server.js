@@ -30,6 +30,19 @@ function proxyEdamam(request, response){
   }))(request, response);
 }
 
+app.get('/saved_recipes:user_name', function(request,response){
+  client.query(
+    `SELECT body
+    FROM saved_recipes s
+    JOIN users u
+    ON s.user_id = u.user_id
+    WHERE u.user_name = $1`,
+    [request.params.user_name]
+  ).then(result => {
+    response.send(result.rows);
+  });
+});
+
 app.get('/users/:user_name', function(request,response){
   client.query(
     `SELECT user_id
