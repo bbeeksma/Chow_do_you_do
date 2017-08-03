@@ -164,19 +164,38 @@ nav li{
   height: 25px;
   font-size: 25px;
 }
-.selected{
-  color: red;
-}
 #recipeLookup label{
   font-size: 25px;
-  color: #FE938C;
+  color: white;
   font-family: 'Anton', sans-serif;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  padding: 10px 0px;
+  margin:auto auto;
 }
 .dietaryRestriction input[type="checkbox"]{
-  width: 45%;
-  display:;
+  display: none;
+}
+legend{
+  font-family: 'Lobster', cursive;
+  color: #E6B89C;
+  font-size: 25px;
+  padding: 10px 0px;
+}
+#recipe-search{
+  font-family: 'Lobster', cursive;
+  font-size: 30px;
+  margin: auto auto;
+  color: white;
+  background-color: #FE938C;
+  border-radius: 10px;
+  padding: 10px 70px;
+  border: 2px solid;
+  padding-top: 10px;
+}
+select{
+  font-size: 20px;
+  background-color: #9CAFB7;
 }
 /*---------------------MODULE-------------------------------*/
 nav a{
@@ -198,5 +217,5 @@ nav a{
   display: none;
 }
 .selected{
-  color: red;
+  color: #FE938C;
 }
