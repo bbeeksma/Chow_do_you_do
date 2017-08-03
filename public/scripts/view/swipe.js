@@ -39,13 +39,13 @@ function handleTouchMove(event) {
       console.log('swiped up');
       $(this).hide('slide', { direction: 'up' }, 200);
       //TODO:Delete recipe
-      app.Recipe.discardRecipe(event,$(event.target).closest('div'));
+      //app.Recipe.discardRecipe(event,$(event.target).closest('div'));
     } else if ( yDiff < -15 ) {
       /* down swipe */
       console.log('swiped down');
       $(this).hide('slide', { direction: 'down' }, 200);
       //TODO:Save Recipe
-      app.Recipe.saveRecipe();
+      //app.Recipe.saveRecipe();
     }
   }
   /* reset values */
