@@ -40,6 +40,22 @@ var app = app || {};
     });
   };
 
+  Recipe.getSavedRecipies = function(){
+    $('section#home #recipes').empty();
+    $.get(`/saved_recipes/${window.localStorage.userName}`)
+      .then(
+        results => {
+          let savedRecipes = results.map( (item) =>{
+            return JSON.parse(item.body);
+          });
+          console.log(savedRecipes);
+          savedRecipes.forEach(function(item){
+            $('section#home #recipes').append(Recipe.toHtml(item));
+          });
+        }
+      );
+  };
+
   Recipe.saveRecipe = (bodyString) => {
     $.post('/saved_recipes', {user_name: window.localStorage.userName, body: bodyString});
   };
@@ -55,8 +71,8 @@ var app = app || {};
   };
 
   Recipe.loadRecipes = function(recipeResults){
-    Recipe.all = recipeResults.map(function(recipe){
-      return new Recipe(recipe);
+    Recipe.all = recipeResults.map(function(item){
+      return new Recipe(item);
     });
   };
 

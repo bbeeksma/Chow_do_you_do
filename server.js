@@ -30,7 +30,7 @@ function proxyEdamam(request, response){
   }))(request, response);
 }
 
-app.get('/saved_recipes:user_name', function(request,response){
+app.get('/saved_recipes/:user_name', function(request,response){
   client.query(
     `SELECT body
     FROM saved_recipes s
