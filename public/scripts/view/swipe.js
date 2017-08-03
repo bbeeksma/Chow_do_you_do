@@ -31,7 +31,7 @@ function handleTouchMove(event) {
       console.log('swiped right');
       $(this).hide('slide', { direction: 'right' }, 200);
       //TODO:get previous recipe
-      app.Recipe.getPreviousRecipe();
+      app.Recipe.getPreviousRecipe(event,$(event.target).closest('div'));
     }
   } else {
     if ( yDiff > 0 ) {
@@ -39,7 +39,7 @@ function handleTouchMove(event) {
       console.log('swiped up');
       $(this).hide('slide', { direction: 'up' }, 200);
       //TODO:Delete recipe
-      app.Recipe.deleteRecipe();
+      app.Recipe.discardRecipe(event,$(event.target).closest('div'));
     } else {
       /* down swipe */
       console.log('swiped down');

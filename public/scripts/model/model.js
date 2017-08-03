@@ -101,21 +101,23 @@ var app = app || {};
   Recipe.getNextRecipe = (e,location) => {
     Recipe.currentRecipe++;
     $(e.target).closest('div').empty();
-    $(location).append(Recipe.toHtml(Recipe.all[Recipe.currentRecipe % Recipe.all.length]));
+    $(location).append(Recipe.toHtml(Recipe.all[Math.abs(Recipe.currentRecipe % Recipe.all.length)]));
   };
 
-  Recipe.getPreviousRecipe = function(){
+  Recipe.getPreviousRecipe = function(e,location){
     Recipe.currentRecipe--;
     $(e.target).closest('div').empty();
-    $(location).append(Recipe.toHtml(Recipe.all[Recipe.currentRecipe]));
+    $(location).append(Recipe.toHtml(Recipe.all[Math.abs(Recipe.currentRecipe % Recipe.all.length)]));
   };
 
-  Recipe.deleteRecipe = function(){
-
+  Recipe.discardRecipe = function(e,location){
+    console.log(Recipe.currentRecipe);
+    Recipe.all.splice(Math.abs(Recipe.currentRecipe % Recipe.all.length), 1);
+    $(e.target).closest('div').empty();
+    $(location).append(Recipe.toHtml(Recipe.all[Math.abs(Recipe.currentRecipe % Recipe.all.length)]));
   };
 
   Recipe.saveRecipe = function(){
-
   };
 
   module.Recipe = Recipe;
