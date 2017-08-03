@@ -63,6 +63,14 @@ br{
   font-size: 60px;
   color: #EAD2AC;
 }
+button{
+  margin: auto auto;
+  color: white;
+  background-color: #FE938C;
+  border-radius: 10px;
+  padding: 20px 70px;
+  border: 2px solid ;
+}
 .button-wrap{
   display: flex;
   height: 200px;
@@ -202,6 +210,13 @@ legend{
 select{
   font-size: 20px;
   background-color: #9CAFB7;
+}
+.leftRightWrap{
+  display: flex;
+  justify-content: space-around;
+}
+.leftRightWrap button{
+  font-size: 30px;
 }
 /*---------------------MODULE-------------------------------*/
 nav a{
