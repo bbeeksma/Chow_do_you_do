@@ -4,10 +4,6 @@ $(document).ready(function(){
   $('.sign-in').show();
 
   $('#home').show();
-  $('#sign-in-form').submit(function(e){
-    e.preventDefault();
-    $('.sign-in').hide();
-  });
   app.recipeController.submitListener();
   menuAnimations();
   $('.getRecipes').on('click', function(){
