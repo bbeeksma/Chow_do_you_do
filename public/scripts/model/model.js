@@ -10,7 +10,8 @@ var app = app || {};
     this.name = object.label;
     this.image = object.image;
     this.servingCount = object.yield;
-    this.calorieCount = object.calories;
+    this.calorieCount = Math.round(object.calories);
+    this.caloriePer = Math.round(object.calories / object.yield);
     this.recipeLink = object.url;
     this.ingredients = Recipe.buildIngredientsList(object.ingredientLines);
     if (object.totalNutrients.CHOCDF){
