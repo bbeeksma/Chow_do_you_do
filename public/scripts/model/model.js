@@ -33,9 +33,15 @@ var app = app || {};
     var recipeResults;
     $.getJSON('../assets/starterRecipes.json',function(data){
       recipeResults = data;
-      console.log('Recipes ', recipeResults);
     }).then(function(){
       Recipe.initRecipes(recipeResults,'section#home #recipes');
+    });
+  };
+
+  Recipe.saveRecipe = (bodyString) => {
+    console.log(window.localStorage.userName);
+    $.get(`/users/bbeeksma`).then((results) => {
+      console.log(results[0].user_id); //$.post('/saved_recipes', {user_id: data, body: bodyString});
     });
   };
 
@@ -46,7 +52,6 @@ var app = app || {};
     }).reduce(function(acc,val){
       return acc += val;
     });
-    console.log('ingredients for template: ',allIngredients);
     return allIngredients;
   };
 
@@ -58,7 +63,6 @@ var app = app || {};
 
   Recipe.toHtml = function(recipe){
     var template = Handlebars.compile($('#recipe-template').html());
-    console.log('handlebars template: ',template(recipe), recipe);
     return template(recipe);
   };
 
@@ -68,11 +72,9 @@ var app = app || {};
 
 //use this function to adds a recipe to the page
   Recipe.initRecipes = function(recipes,location){
-    console.log(recipes);
     Recipe.loadRecipes(recipes);
     $(location).empty();
     var thisRecipe = Recipe.getRandomRecipe();
-    console.log(thisRecipe);
     $(location).append(Recipe.toHtml(Recipe.all[thisRecipe]));
   };
 

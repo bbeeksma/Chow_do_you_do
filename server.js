@@ -30,6 +30,17 @@ function proxyEdamam(request, response){
   }))(request, response);
 }
 
+app.get('/users/:user_name', function(request,response){
+  client.query(
+    `SELECT user_id
+    FROM users
+    WHERE user_name = $1;`,
+    [request.params.user_name]
+  ).then(result => {
+    response.send(result.rows);
+  });
+});
+
 app.get('/edamam/*', proxyEdamam);
 app.get('*', (request, response) => response.sendFile('index.html', {root: './public'}));
 
@@ -102,7 +113,9 @@ function createTables() {
       saved_recipes_id SERIAL PRIMARY KEY
       ,user_id INTEGER NOT NULL REFERENCES users(user_id)
       ,body TEXT NOT NULL
-      ,created DATETIME DEFAULT NOW()
+      ,created DATE DEFAULT NOW()
     );`
   );
 }
+
+createTables();
