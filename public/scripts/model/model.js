@@ -81,16 +81,27 @@ var app = app || {};
     return template(recipe);
   };
 
-  Recipe.getRandomRecipe = function(){
-    return Math.floor(Math.random() * Recipe.all.length);
-  };
-
 //use this function to adds a recipe to the page
   Recipe.initRecipes = function(recipes,location){
     Recipe.loadRecipes(recipes);
     $(location).empty();
-    var thisRecipe = Recipe.getRandomRecipe();
-    $(location).append(Recipe.toHtml(Recipe.all[thisRecipe]));
+    var onHome = location.search('home');
+    console.log(onHome);
+    if (localStorage.userName && onHome > -1){
+      console.log('userName exists');
+      $('#home .hrTry span').innertext = 'Your Saved Recipes';
+      console.log($('#home .hrTry span').html());
+      Recipe.all.forEach(function(item){
+        $(location).append(Recipe.toHtml(item));
+      });
+    } else {
+      $(location).append(Recipe.toHtml(Recipe.all[0]));
+    }
+  };
+
+//add a "render new recipe" function on swipe
+  Recipe.swipeListener = function(){
+    //$('').on('swipe',)
   };
 
   module.Recipe = Recipe;
