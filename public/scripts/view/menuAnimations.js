@@ -16,7 +16,8 @@ $(document).ready(function(){
   });
 
   app.Recipe.fetchRecipes();
-
+  $(document).on('touchstart', '.recipe', handleTouchStart);
+  $(document).on('touchmove', '.recipe', handleTouchMove);
 });
 
 function menuAnimations(){
