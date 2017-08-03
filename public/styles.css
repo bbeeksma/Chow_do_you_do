@@ -164,6 +164,20 @@ nav li{
   height: 25px;
   font-size: 25px;
 }
+.selected{
+  color: red;
+}
+#recipeLookup label{
+  font-size: 25px;
+  color: #FE938C;
+  font-family: 'Anton', sans-serif;
+  display: flex;
+  justify-content: space-between;
+}
+.dietaryRestriction input[type="checkbox"]{
+  width: 45%;
+  display:;
+}
 /*---------------------MODULE-------------------------------*/
 nav a{
   color: #E6B89C;
@@ -182,4 +196,7 @@ nav a{
 }
 .off{
   display: none;
+}
+.selected{
+  color: red;
 }

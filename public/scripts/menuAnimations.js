@@ -22,3 +22,6 @@ $(document).ready(function(){
 $('.toggleForm').on('click', function (){
   $('.expandForm').toggleClass('show');
 });
+$("input[type='checkbox']").change(function(){
+  $(this).parent().toggleClass('selected');
+});
