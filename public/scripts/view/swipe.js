@@ -20,13 +20,13 @@ function handleTouchMove(event) {
   var yDiff = yDown - yUp;
 
   if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
-    if ( xDiff > 0 ) {
+    if ( xDiff > 30 ) {
           /* left swipe */
       console.log('swiped left');
       $(this).hide('slide', { direction: 'left' }, 200);
       //TODO:Get next recipe
       app.Recipe.getNextRecipe(event,$(event.target).closest('div'));
-    } else {
+    } else if ( xDiff < -30 ) {
       /* right swipe */
       console.log('swiped right');
       $(this).hide('slide', { direction: 'right' }, 200);
@@ -34,13 +34,13 @@ function handleTouchMove(event) {
       app.Recipe.getPreviousRecipe(event,$(event.target).closest('div'));
     }
   } else {
-    if ( yDiff > 0 ) {
+    if ( yDiff > 30 ) {
       /* up swipe */
       console.log('swiped up');
       $(this).hide('slide', { direction: 'up' }, 200);
       //TODO:Delete recipe
       app.Recipe.discardRecipe(event,$(event.target).closest('div'));
-    } else {
+    } else if ( yDiff < -30 ) {
       /* down swipe */
       console.log('swiped down');
       $(this).hide('slide', { direction: 'down' }, 200);
