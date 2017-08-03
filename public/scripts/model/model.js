@@ -72,7 +72,7 @@ var app = app || {};
     Recipe.loadRecipes(recipes);
     $(location).empty();
     var thisRecipe = Recipe.getRandomRecipe();
-    console.log(i,thisRecipe);
+    console.log(thisRecipe);
     $(location).append(Recipe.toHtml(Recipe.all[thisRecipe]));
   };
 
