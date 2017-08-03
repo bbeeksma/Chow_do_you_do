@@ -79,68 +79,71 @@
   </section>
 
   <section id="recipe" class="tab-content recipe">
-    <i class="fa fa-minus-square-o clickable toggleForm" aria-hidden="true"></i>
-    <h1 class='formChoice'>Choose Your Options</h1>
-    <div class="clear"></div>
-    <div class="expandForm">
-    <!--dropdown menu content here-->
-      <form id="recipeLookup">
+    <div class='formWrapper'>
+      <i class="fa fa-minus-square-o clickable toggleForm" aria-hidden="true"></i>
+      <h1 class='formChoice'>Choose Your Options</h1>
+      <div class="clear"></div>
+      <div class="expandForm">
+      <!--dropdown menu content here-->
+        <form id="recipeLookup">
 
-        <label id="chooseIngredient">
-          <input type="text" id="ingredient" name="q" placeholder="What do you want to eat?">
-        </label>
+          <label id="chooseIngredient">
+            <input type="text" id="ingredient" name="q" placeholder="What do you want to eat?">
+          </label>
 
-        <fieldset class="diet">
-          <legend>Health Options - Choose as many as you like!</legend>
-          <label class="dietaryRestriction">
-            <input type="checkbox" name="diet" value="balanced"> Balanced
-          </label>
-          <label class="dietaryRestriction">
-            <input type="checkbox" name="diet" value="high-protein"> High-Protein
-          </label>
-          <label class="dietaryRestriction">
-            <input type="checkbox" name="diet" value="low-fat"> Low-Fat
-          </label>
-          <label class="dietaryRestriction">
-            <input type="checkbox" name="diet" value="low-carb"> Low-Carb
-          </label>
-        </fieldset>
-        <fieldset class="health">
-          <legend>Dietary Choices - Choose as many as you like!</legend>
-          <label class="dietaryRestriction">
-            <input type="checkbox" name="health" value="vegan"> Vegan
-          </label>
-          <label class="dietaryRestriction">
-            <input type="checkbox" name="health" value="vegetarian"> Vegetarian
-          </label>
-          <label class="dietaryRestriction">
-            <input type="checkbox" name="health" value="sugar-conscious"> Sugar-Conscious
-          </label>
-          <label class="dietaryRestriction">
-            <input type="checkbox" name="health" value="peanut-free"> Peanut-Free
-          </label>
-          <label class="dietaryRestriction">
-            <input type="checkbox" name="health" value="tree-nut-free"> Tree-Nut-Free
-          </label>
-          <label class="dietaryRestriction">
-            <input type="checkbox" name="health" value="alcohol-free"> Alcohol-Free
-          </label>
-        </fieldset>
+          <fieldset class="diet">
+            <legend>Health Options - Choose as many as you like!</legend>
+            <label class="dietaryRestriction clickable">
+              <input type="checkbox" name="diet" value="balanced"> Balanced
+            </label>
+            <label class="dietaryRestriction clickable">
+              <input type="checkbox" name="diet" value="high-protein"> High-Protein
+            </label>
+            <label class="dietaryRestriction clickable">
+              <input type="checkbox" name="diet" value="low-fat"> Low-Fat
+            </label>
+            <label class="dietaryRestriction clickable">
+              <input type="checkbox" name="diet" value="low-carb"> Low-Carb
+            </label>
+          </fieldset>
+          <fieldset class="health">
+            <legend>Dietary Choices - Choose as many as you like!</legend>
+            <label class="dietaryRestriction clickable">
+              <input type="checkbox" name="health" value="vegan"> Vegan
+            </label>
+            <label class="dietaryRestriction clickable">
+              <input type="checkbox" name="health" value="vegetarian"> Vegetarian
+            </label>
+            <label class="dietaryRestriction clickable">
+              <input type="checkbox" name="health" value="sugar-conscious"> Sugar-Conscious
+            </label>
+            <label class="dietaryRestriction clickable">
+              <input type="checkbox" name="health" value="peanut-free"> Peanut-Free
+            </label>
+            <label class="dietaryRestriction clickable">
+              <input type="checkbox" name="health" value="tree-nut-free"> Tree-Nut-Free
+            </label>
+            <label class="dietaryRestriction clickable">
+              <input type="checkbox" name="health" value="alcohol-free"> Alcohol-Free
+            </label>
+          </fieldset>
 
-        <select name="calories">
-          <option selected="selected" value="gte 0, lte 9999">Select Calories per Serving</option>
-          <option value="gte 0, lte 150">Less than 150</option>
-          <option value="gte 150, lte 200">150 to 200</option>
-          <option value="gte 200, lte 250">200 to 250</option>
-          <option value="gte 250, lte 300">250 to 300</option>
-          <option value="gte 300, lte 350">300 to 350</option>
-          <option value="gte 350, lte 400">350 to 400</option>
-          <option value="gte 400, lte 9999">400 or more</option>
-        </select>
+          <select name="calories">
+            <option selected="selected" value="gte 0, lte 9999">Select Calories per Serving</option>
+            <option value="gte 0, lte 150">Less than 150</option>
+            <option value="gte 150, lte 200">150 to 200</option>
+            <option value="gte 200, lte 250">200 to 250</option>
+            <option value="gte 250, lte 300">250 to 300</option>
+            <option value="gte 300, lte 350">300 to 350</option>
+            <option value="gte 350, lte 400">350 to 400</option>
+            <option value="gte 400, lte 9999">400 or more</option>
+          </select>
 
-        <button type="submit" id="recipe-search">Search!</button>
-      </form>
+          <button type="submit" id="recipe-search">Search!</button>
+        </form>
+      </div>
     </div>
+
     <div class="recipe-result-wrap">
       <div class="recipe-result">
         <!--Render recipes here-->
@@ -169,6 +172,8 @@
       <p>Contact:bytemibro@gmail.com</p><p>GitHub:<a href="https://github.com/ByteMiBro">github.com/ByteMiBro</a></p>
     </div>
   </section>
+  <div class='clear'></div>
+
   <footer>
     <!--Adttributions here-->
     <div id="edamam-badge" data-color="white"></div>

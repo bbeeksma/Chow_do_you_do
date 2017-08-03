@@ -22,6 +22,9 @@ footer{
   height: 100px;
   margin-top: 20px;
 }
+br{
+  display: none;
+}
 /*-----------------------LAYOUT------------------------------*/
 .fa-toggle-down, .fa-toggle-up{
   width:100%;
@@ -208,6 +211,9 @@ nav a{
   border-radius: 10px;
 }
 @media (min-width: 600px){
+  header{
+    border-bottom: 2px solid #9CAFB7;
+  }
   .fa-toggle-down, .fa-toggle-up{
     display: none;
   }
@@ -247,6 +253,10 @@ nav a{
   .navList{
     height: 1000px;
   }
+  nav a{
+    display: inline-block;
+    border: none;
+  }
   .getRecipes{
     font-family: 'Lobster', cursive;
     font-size: 45px;
@@ -258,64 +268,45 @@ nav a{
     border: 2px solid;
   }
   .hrTry {
-    display: block;
-    font-family: 'Lobster', cursive;
-    color: #E6B89C;
     font-size: 30px;
-    text-align: center;
-    overflow: hidden;
-    white-space: nowrap;
-    padding-bottom: 10px;
-  }
-
-  .hrTry > span {
-    position: relative;
-    display: inline-block;
   }
 
   .hrTry > span:before,
   .hrTry > span:after {
-    content: "";
-    position: absolute;
-    top: 50%;
     width: 9999%;
-    height: 5px;
-    background: #EAD2AC;
-  }
-
-  .hrTry > span:before {
-    right: 100%;
-    margin-right: 15px;
-  }
-
-  .hrTry > span:after {
-    left: 100%;
-    margin-left: 15px;
   }
   .fa-plus-square-o, .fa-minus-square-o{
     display: none;
+  }
+  .formWrapper{
+    width: 50%;
+    float: left;
+  }
+  .formChoice{
+    text-align: center;
+    float: none;
+  }
+  .expandForm{
+    width: 100%;
+  }
+  .dietaryRestriction{
+    font-size: 30px;
+    padding: 10px 25px;
+    display: inline-block;
+  }
+  .recipe-result-wrap{
+    border: 2px solid white;
+    width: 45%;
+    float: right;
+    height: 700px;
+  }
+  legend{
+    font-size: 40px;
+  }
+  br{
+    display: inline;
+  }
 }
-.formChoice{
-  text-align: center;
-  float: left;
-}
-.expandForm{
-  width: 50%;
-  display: flex;
-  justify-content: flex-start;
-}
-nav a{
-  color: #E6B89C;
-  font-family: 'Anton', sans-serif;
-  font-size: 40px;
-  text-decoration: none;
-  display: inline-block;
-  padding: 10px;
-  margin: 20px 30px;
-  border: 0px solid #9CAFB7;
-  border-radius: 10px;
-}
-
 /*---------------------STATE--------------------------------*/
 .show{
   max-height: 1000px;
