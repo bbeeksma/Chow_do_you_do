@@ -6,10 +6,12 @@ var app = app || {};
   Recipe.all = [];
 
   function Recipe(object){
+    this.uri = object.uri;
     this.name = object.label;
     this.image = object.image;
     this.servingCount = object.yield;
-    this.calorieCount = object.calories;
+    this.calorieCount = Math.round(object.calories);
+    this.caloriePer = Math.round(object.calories / object.yield);
     this.recipeLink = object.url;
     this.ingredients = Recipe.buildIngredientsList(object.ingredientLines);
     if (object.totalNutrients.CHOCDF){
@@ -38,6 +40,22 @@ var app = app || {};
     });
   };
 
+  Recipe.getSavedRecipies = function(){
+    $('section#home #recipes').empty();
+    $.get(`/saved_recipes/${window.localStorage.userName}`)
+      .then(
+        results => {
+          let savedRecipes = results.map( (item) =>{
+            return JSON.parse(item.body);
+          });
+          console.log(savedRecipes);
+          savedRecipes.forEach(function(item){
+            $('section#home #recipes').append(Recipe.toHtml(item));
+          });
+        }
+      );
+  };
+
   Recipe.saveRecipe = (bodyString) => {
     $.post('/saved_recipes', {user_name: window.localStorage.userName, body: bodyString});
   };
@@ -53,8 +71,8 @@ var app = app || {};
   };
 
   Recipe.loadRecipes = function(recipeResults){
-    Recipe.all = recipeResults.map(function(recipe){
-      return new Recipe(recipe);
+    Recipe.all = recipeResults.map(function(item){
+      return new Recipe(item);
     });
   };
 
