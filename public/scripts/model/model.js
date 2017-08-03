@@ -40,7 +40,7 @@ var app = app || {};
 
   Recipe.saveRecipe = (bodyString) => {
     console.log(window.localStorage.userName);
-    $.get(`/users/bbeeksma`).then((results) => {
+    $.get(`/users/${window.localStorage.userName}`).then((results) => {
       console.log(results[0].user_id); //$.post('/saved_recipes', {user_id: data, body: bodyString});
     });
   };
