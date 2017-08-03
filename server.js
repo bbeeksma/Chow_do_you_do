@@ -55,8 +55,9 @@ app.post('/users', function(request, response) {
 });
 
 app.post('/saved_recipes', function(request, response) {
+  console.log(request.body.user_id,request.body.body);
   client.query(
-    'INSERT INTO saved_recipes(user_id,body,) VALUES($1,$2) ON CONFLICT DO NOTHING',
+    'INSERT INTO saved_recipes (user_id, body) VALUES($1,$2) ON CONFLICT DO NOTHING',
     [request.body.user_id,request.body.body],
     function(err) {
       if (err) console.error(err);
