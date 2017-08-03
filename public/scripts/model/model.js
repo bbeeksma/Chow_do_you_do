@@ -31,7 +31,7 @@ var app = app || {};
     }
   }
 
-  Recipe.fetchRandomRecipes = function(){
+  Recipe.fetchRecipes = function(){
     var recipeResults;
     $.getJSON('../assets/starterRecipes.json',function(data){
       recipeResults = data;
@@ -81,26 +81,38 @@ var app = app || {};
     return template(recipe);
   };
 
+Recipe.initRcipe;
 //use this function to adds a recipe to the page
   Recipe.initRecipes = function(recipes,location){
     Recipe.loadRecipes(recipes);
     $(location).empty();
-    var onHome = location.search('home');
-    console.log(onHome);
+    var onHome = location.search('#home');
     if (localStorage.userName && onHome > -1){
-      console.log('userName exists');
       $('#home .hrTry span').text('Your Saved Recipes');
       Recipe.all.forEach(function(item){
         $(location).append(Recipe.toHtml(item));
       });
     } else {
+      Recipe.initRecipe = Recipe.all[0];
       $(location).append(Recipe.toHtml(Recipe.all[0]));
     }
   };
 
-//add a "render new recipe" function on swipe
-  Recipe.swipeListener = function(){
-    //$('').on('swipe',)
+  Recipe.getNextRecipe = function(){
+    $('')
+    console.log(currentRecipe);
+  };
+
+  Recipe.getPreviousRecipe = function(){
+
+  };
+
+  Recipe.deleteRecipe = function(){
+
+  };
+
+  Recipe.saveRecipe = function(){
+
   };
 
   module.Recipe = Recipe;

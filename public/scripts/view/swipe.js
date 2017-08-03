@@ -1,6 +1,6 @@
 //Event handlers to listen for swiping on recipe-result class
-$('.recipe-result').on('touchstart', handleTouchStart);
-$('.recipe-result').on('touchmove', handleTouchMove);
+$('.recipe').on('touchstart', handleTouchStart);
+$('.recipe').on('touchmove', handleTouchMove);
 
 var xDown = null;
 var yDown = null;
@@ -26,21 +26,25 @@ function handleTouchMove(event) {
           /* left swipe */
       console.log('swiped left');
       $(this).hide('slide', { direction: 'left' }, 200);
-
+      //TODO:Get next recipe
+      app.Recipe.getNextRecipe();
     } else {
       /* right swipe */
       console.log('swiped right');
       $(this).hide('slide', { direction: 'right' }, 200);
+      //TODO:get previous recipe
     }
   } else {
     if ( yDiff > 0 ) {
       /* up swipe */
       console.log('swiped up');
       $(this).hide('slide', { direction: 'up' }, 200);
+      //TODO:Delete recipe
     } else {
       /* down swipe */
       console.log('swiped down');
       $(this).hide('slide', { direction: 'down' }, 200);
+      //TODO:Save Recipe
     }
   }
   /* reset values */

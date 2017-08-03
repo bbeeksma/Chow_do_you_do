@@ -15,7 +15,7 @@ $(document).ready(function(){
     $('#recipe').fadeIn();
   });
 
-  app.Recipe.fetchRandomRecipes();
+  app.Recipe.fetchRecipes();
 
 });
 
