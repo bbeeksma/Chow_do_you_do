@@ -21,9 +21,11 @@ var app = app || {};
       recipeController.recipeResults = data.hits.map(function(item){
         return item.recipe;
       });
+      console.log(recipeController.recipeResults);
       app.Recipe.initRecipes(recipeController.recipeResults,'.recipe-result');
     });
   };
+
   recipeController.submitListener = () => {
     $('#recipeLookup').submit(function(e) {
       e.preventDefault();

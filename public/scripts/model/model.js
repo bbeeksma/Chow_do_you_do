@@ -6,6 +6,7 @@ var app = app || {};
   Recipe.all = [];
 
   function Recipe(object){
+    this.uri = object.uri;
     this.name = object.label;
     this.image = object.image;
     this.servingCount = object.yield;
