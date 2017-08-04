@@ -84,9 +84,11 @@ var app = app || {};
           user_id: result[0].user_id,
           body: bodyString
         }
+      })
+      .then(function(){
+        $('.mainNav').find('[data-content=home]').click();
       });
     });
-    $('.mainNav').find('[data-content=home]').click();
   };
 
   Recipe.saveRecipe = (bodyString) => {
