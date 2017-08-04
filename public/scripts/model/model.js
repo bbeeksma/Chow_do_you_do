@@ -48,7 +48,6 @@ var app = app || {};
           let savedRecipes = results.map( (item) =>{
             return JSON.parse(item.body);
           });
-          console.log(savedRecipes);
           Recipe.all = [];
           if (Recipe.all.length === 0){
             Recipe.fetchRecipes();
@@ -93,7 +92,6 @@ var app = app || {};
     Recipe.loadRecipes(recipes);
     $(location).empty();
     var onHome = location.search('#home');
-    console.log(Recipe.all);
     $(location).append(Recipe.toHtml(Recipe.all[0]));
   };
 
@@ -110,7 +108,6 @@ var app = app || {};
   };
 
   Recipe.discardRecipe = function(e,location){
-    console.log(Recipe.currentRecipe);
     Recipe.all.splice(Math.abs(Recipe.currentRecipe % Recipe.all.length), 1);
     $(e.target).closest('div').empty();
     $(location).append(Recipe.toHtml(Recipe.all[Math.abs(Recipe.currentRecipe % Recipe.all.length)]));
