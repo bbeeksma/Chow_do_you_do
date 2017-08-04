@@ -31,6 +31,16 @@ var app = app || {};
     }
   }
 
+  Recipe.scrambleArray = (array) => {
+    for (var i = array.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+    return array;
+  };
+
   Recipe.fetchRecipes = function(){
     var recipeResults;
     $.getJSON('../assets/starterRecipes.json',function(data){
@@ -77,9 +87,10 @@ var app = app || {};
   };
 
   Recipe.loadRecipes = function(recipeResults){
-    Recipe.all = recipeResults.map(function(item){
+    Recipe.all = Recipe.scrambleArray(recipeResults).map(function(item){
       return new Recipe(item);
     });
+
   };
 
   Recipe.toHtml = function(recipe){
