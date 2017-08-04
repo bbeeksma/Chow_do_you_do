@@ -50,10 +50,14 @@ var app = app || {};
           });
           console.log(savedRecipes);
           Recipe.all = [];
-          savedRecipes.forEach(function(item){
-            Recipe.all.push(item);
-            $('section#home #recipes').append(Recipe.toHtml(item));
-          });
+          if (Recipe.all.length === 0){
+            Recipe.fetchRecipes();
+          } else {
+            savedRecipes.forEach(function(item){
+              Recipe.all.push(item);
+            });
+            $('section#home #recipes').append(Recipe.toHtml(Recipe.all[0]));
+          }
         }
       );
   };
@@ -90,12 +94,7 @@ var app = app || {};
     $(location).empty();
     var onHome = location.search('#home');
     console.log(Recipe.all);
-    if (Recipe.all && onHome > -1) {
-      $('#home .hrTry span').text('Your Saved Recipes');
-      Recipe.getSavedRecipies();
-    } else {
-      $(location).append(Recipe.toHtml(Recipe.all[0]));
-    }
+    $(location).append(Recipe.toHtml(Recipe.all[0]));
   };
 
   Recipe.getNextRecipe = (e,location) => {
@@ -123,13 +122,13 @@ var app = app || {};
   $(document).ready(function(){
     $(document).on('click', '.mainNav li', function(e){
       if($(e.target).data('content') === 'home'){
-        Recipe.all = [];
-        Recipe.fetchRecipes();
+        Recipe.getSavedRecipies();
       }
       else if ($(e.target).data('content') === 'recipes') {
         Recipe.all = [];
       }
     });
+    $('.mainNav').find('[data-content=home]').click();
   });
   module.Recipe = Recipe;
 })(app);
