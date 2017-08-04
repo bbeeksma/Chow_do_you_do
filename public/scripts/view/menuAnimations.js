@@ -21,6 +21,13 @@ $(document).ready(function(){
     app.Recipe.getPreviousRecipe($(e.target).closest('div').prev());
   });
 
+  $('#left-home').on('click', function(e){
+    app.Recipe.getNextRecipe($(e.target).closest('div').prev());
+  });
+  $('#right-home').on('click', function(e){
+    app.Recipe.getPreviousRecipe($(e.target).closest('div').prev());
+  });
+
   $('#save-recipes').on('click', function(e){
     console.log(JSON.stringify(app.Recipe.all[Math.abs(app.Recipe.currentRecipe % app.Recipe.all.length)]));
     app.Recipe.saveRecipe(JSON.stringify(app.Recipe.all[Math.abs(app.Recipe.currentRecipe % app.Recipe.all.length)]));
