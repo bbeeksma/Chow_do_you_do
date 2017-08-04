@@ -72,6 +72,15 @@ var app = app || {};
       );
   };
 
+  Recipe.deleteRecipe = function(bodyString){
+    $.get(`/users/${window.localStorage.userName}`).then(result =>{
+      $.ajax({
+        url: `/saved_recipes/${result[0].user_id}.${bodyString}`
+        ,method: 'DELETE'
+      });
+    });
+  };
+
   Recipe.saveRecipe = (bodyString) => {
     $.get(`/users/${window.localStorage.userName}`).then(result =>{
       $.post('/saved_recipes', {user_id: result[0].user_id, body: bodyString});

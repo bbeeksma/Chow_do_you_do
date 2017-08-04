@@ -84,10 +84,10 @@ app.post('/saved_recipes', function(request, response) {
   );
 });
 
-app.delete('/saved_recipes/:id', (request, response) => {
+app.delete('/saved_recipes/:user_id.:recipe_body', (request, response) => {
   client.query(
-    `DELETE FROM saved_recipes WHERE saved_recipes_id=$1;`,
-    [request.params.id]
+    `DELETE FROM saved_recipes WHERE user_id= $1 AND body = $2;`,
+    [request.params.user_id, decodeURIComponent(request.params.recipe_body)]
   )
     .then(() => response.send('Delete complete'))
     .catch(console.error);
