@@ -49,7 +49,9 @@ var app = app || {};
             return JSON.parse(item.body);
           });
           console.log(savedRecipes);
+          Recipe.all = [];
           savedRecipes.forEach(function(item){
+            Recipe.all.push(item);
             $('section#home #recipes').append(Recipe.toHtml(item));
           });
         }
@@ -87,13 +89,11 @@ var app = app || {};
     Recipe.loadRecipes(recipes);
     $(location).empty();
     var onHome = location.search('#home');
-    if (localStorage.userName && onHome > -1){
+    console.log(Recipe.all);
+    if (Recipe.all && onHome > -1) {
       $('#home .hrTry span').text('Your Saved Recipes');
-      Recipe.all.forEach(function(item){
-        $(location).append(Recipe.toHtml(item));
-      });
+      Recipe.getSavedRecipies();
     } else {
-      Recipe.initRecipe = Recipe.all[0];
       $(location).append(Recipe.toHtml(Recipe.all[0]));
     }
   };
@@ -120,5 +120,16 @@ var app = app || {};
   Recipe.saveRecipe = function(){
   };
 
+  $(document).ready(function(){
+    $(document).on('click', '.mainNav li', function(e){
+      if($(e.target).data('content') === 'home'){
+        Recipe.all = [];
+        Recipe.fetchRecipes();
+      }
+      else if ($(e.target).data('content') === 'recipes') {
+        Recipe.all = [];
+      }
+    });
+  });
   module.Recipe = Recipe;
 })(app);
