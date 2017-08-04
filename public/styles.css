@@ -68,7 +68,6 @@ button{
   color: white;
   background-color: #FE938C;
   border-radius: 10px;
-  padding: 20px 70px;
   border: 2px solid ;
 }
 .button-wrap{
@@ -199,13 +198,13 @@ legend{
 #recipe-search{
   font-family: 'Lobster', cursive;
   font-size: 30px;
-  margin: auto auto;
+  margin:10px auto;
   color: white;
   background-color: #FE938C;
   border-radius: 10px;
-  padding: 10px 70px;
+  width: 50%;
   border: 2px solid;
-  padding-top: 10px;
+  padding: 10px;
 }
 select{
   font-size: 20px;
@@ -217,6 +216,12 @@ select{
 }
 .leftRightWrap button{
   font-size: 30px;
+}
+.left, .right, .save{
+  width: 25%;
+}
+.save{
+  font-family: 'Lobster', cursive;
 }
 /*---------------------MODULE-------------------------------*/
 nav a{
