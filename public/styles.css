@@ -202,9 +202,9 @@ legend{
   color: white;
   background-color: #FE938C;
   border-radius: 10px;
-  padding: 10px 70px;
+  width: 50%;
   border: 2px solid;
-  padding-top: 10px;
+  padding: 10px;
 }
 select{
   font-size: 20px;
@@ -219,6 +219,9 @@ select{
 }
 .left, .right, .save{
   width: 25%;
+}
+.save{
+  font-family: 'Lobster', cursive;
 }
 /*---------------------MODULE-------------------------------*/
 nav a{
