@@ -87,7 +87,7 @@ var app = app || {};
       });
     });
     console.log('reseting');
-    Recipe.getSavedRecipies();
+    $('.mainNav').find('[data-content=home]').click();
   };
 
   Recipe.saveRecipe = (bodyString) => {
