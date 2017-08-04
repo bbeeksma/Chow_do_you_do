@@ -26,6 +26,7 @@ footer{
   height: 100px;
   margin-top: 20px auto;
   max-width: 1500px;
+  padding-top: 15px;
 }
 br{
   display: none;
