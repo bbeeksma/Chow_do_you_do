@@ -41,9 +41,9 @@ $(document).ready(function(){
   $('#delete').on('click', function(e){
     console.log(JSON.stringify(app.Recipe.all[Math.abs(app.Recipe.currentRecipe % app.Recipe.all.length)]));
     app.Recipe.deleteRecipe(JSON.stringify(app.Recipe.all[Math.abs(app.Recipe.currentRecipe % app.Recipe.all.length)]));
-    $('.mainNav').find('[data-content=home]').click();
   });
   $('#save-recipes').on('click', function(e){
+    console.log(app.Recipe.all[Math.abs(app.Recipe.currentRecipe % app.Recipe.all.length)]);
     app.Recipe.saveRecipe(JSON.stringify(app.Recipe.all[Math.abs(app.Recipe.currentRecipe % app.Recipe.all.length)]));
   });
 

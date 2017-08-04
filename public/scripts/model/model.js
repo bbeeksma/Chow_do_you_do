@@ -86,7 +86,6 @@ var app = app || {};
         }
       });
     });
-    console.log('reseting');
     $('.mainNav').find('[data-content=home]').click();
   };
 
@@ -94,8 +93,6 @@ var app = app || {};
     $.get(`/users/${window.localStorage.userName}`).then(result =>{
       $.post('/saved_recipes', {user_id: result[0].user_id, body: bodyString});
     });
-    console.log('resetting');
-    Recipe.getSavedRecipies();
   };
 
  //returns ingredients as a list of <li> elements to append with the tmplate
@@ -109,10 +106,11 @@ var app = app || {};
   };
 
   Recipe.loadRecipes = function(recipeResults){
-    Recipe.all = Recipe.scrambleArray(recipeResults).map(function(item){
+    let someRecipes = recipeResults.map(function(item){
       return new Recipe(item);
     });
 
+    Recipe.all = Recipe.scrambleArray(someRecipes);
   };
 
   Recipe.toHtml = function(recipe){
