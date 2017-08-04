@@ -44,6 +44,7 @@ app.get('/saved_recipes/:user_name', function(request,response){
 });
 
 app.get('/users/:user_name', function(request,response){
+  console.log(request.params);
   client.query(
     `SELECT user_id
     FROM users
@@ -72,25 +73,22 @@ app.post('/saved_recipes', function(request, response) {
     `INSERT INTO saved_recipes
       (user_id, body)
     SELECT
-      u.user_id
-      ,$2 AS body
-    FROM users u
-    LEFT JOIN saved_recipes s
-    ON u.user_id = s.user_id
-    WHERE user_name = $1
-    LIMIT 1
+      $1
+      ,$2
+    WHERE $2 NOT IN (SELECT body FROM saved_recipes WHERE user_id = $1)
     ON CONFLICT DO NOTHING`,
-    [request.body.user_name,request.body.body],
+    [request.body.user_id,request.body.body],
     function(err) {
       if (err) console.error(err);
     }
   );
 });
 
-app.delete('/saved_recipes/:id', (request, response) => {
+app.delete('/delete_saved_recipes/', (request, response) => {
+  console.log(request.body);
   client.query(
-    `DELETE FROM saved_recipes WHERE saved_recipes_id=$1;`,
-    [request.params.id]
+    `DELETE FROM saved_recipes WHERE user_id = $1 AND body = $2;`,
+    [request.body.user_id, request.body.body]
   )
     .then(() => response.send('Delete complete'))
     .catch(console.error);

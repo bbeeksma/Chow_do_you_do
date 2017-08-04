@@ -31,6 +31,16 @@ var app = app || {};
     }
   }
 
+  Recipe.scrambleArray = (array) => {
+    for (var i = array.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+    return array;
+  };
+
   Recipe.fetchRecipes = function(){
     var recipeResults;
     $.getJSON('../assets/starterRecipes.json',function(data){
@@ -62,8 +72,26 @@ var app = app || {};
       );
   };
 
+  Recipe.deleteRecipe = function(bodyString){
+    $.get(`/users/${window.localStorage.userName}`).then(result =>{
+      if(!result || !result.length){
+        return;
+      }
+      $.ajax({
+        url: `/delete_saved_recipes/`
+        ,method: 'DELETE'
+        ,data:{
+          user_id: result[0].user_id,
+          body: bodyString
+        }
+      });
+    });
+  };
+
   Recipe.saveRecipe = (bodyString) => {
-    $.post('/saved_recipes', {user_name: window.localStorage.userName, body: bodyString});
+    $.get(`/users/${window.localStorage.userName}`).then(result =>{
+      $.post('/saved_recipes', {user_id: result[0].user_id, body: bodyString});
+    });
   };
 
  //returns ingredients as a list of <li> elements to append with the tmplate
@@ -77,9 +105,10 @@ var app = app || {};
   };
 
   Recipe.loadRecipes = function(recipeResults){
-    Recipe.all = recipeResults.map(function(item){
+    Recipe.all = Recipe.scrambleArray(recipeResults).map(function(item){
       return new Recipe(item);
     });
+
   };
 
   Recipe.toHtml = function(recipe){
@@ -96,15 +125,15 @@ var app = app || {};
     $(location).append(Recipe.toHtml(Recipe.all[0]));
   };
 
-  Recipe.getNextRecipe = (e,location) => {
+  Recipe.getNextRecipe = (location) => {
     Recipe.currentRecipe++;
-    $(e.target).closest('div').empty();
+    $(location).empty();
     $(location).append(Recipe.toHtml(Recipe.all[Math.abs(Recipe.currentRecipe % Recipe.all.length)]));
   };
 
-  Recipe.getPreviousRecipe = function(e,location){
+  Recipe.getPreviousRecipe = function(location){
     Recipe.currentRecipe--;
-    $(e.target).closest('div').empty();
+    $(location).empty();
     $(location).append(Recipe.toHtml(Recipe.all[Math.abs(Recipe.currentRecipe % Recipe.all.length)]));
   };
 
@@ -112,9 +141,6 @@ var app = app || {};
     Recipe.all.splice(Math.abs(Recipe.currentRecipe % Recipe.all.length), 1);
     $(e.target).closest('div').empty();
     $(location).append(Recipe.toHtml(Recipe.all[Math.abs(Recipe.currentRecipe % Recipe.all.length)]));
-  };
-
-  Recipe.saveRecipe = function(){
   };
 
   $(document).on('click', '.mainNav li', function(e){

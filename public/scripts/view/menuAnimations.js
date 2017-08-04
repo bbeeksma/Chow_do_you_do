@@ -13,8 +13,30 @@ $(document).ready(function(){
 
   $(document).on('touchstart', '.recipe', handleTouchStart);
   $(document).on('touchmove', '.recipe', handleTouchMove);
-});
 
+  $('#left-recipes').on('click', function(e){
+    app.Recipe.getNextRecipe($(e.target).closest('div').prev());
+  });
+  $('#right-recipes').on('click', function(e){
+    app.Recipe.getPreviousRecipe($(e.target).closest('div').prev());
+  });
+
+  $('#left-home').on('click', function(e){
+    app.Recipe.getNextRecipe($(e.target).closest('div').prev());
+  });
+  $('#right-home').on('click', function(e){
+    app.Recipe.getPreviousRecipe($(e.target).closest('div').prev());
+  });
+
+  $('#delete').on('click', function(e){
+    console.log(JSON.stringify(app.Recipe.all[Math.abs(app.Recipe.currentRecipe % app.Recipe.all.length)]));
+    app.Recipe.deleteRecipe(JSON.stringify(app.Recipe.all[Math.abs(app.Recipe.currentRecipe % app.Recipe.all.length)]));
+  });
+  $('#save-recipes').on('click', function(e){
+    app.Recipe.saveRecipe(JSON.stringify(app.Recipe.all[Math.abs(app.Recipe.currentRecipe % app.Recipe.all.length)]));
+  });
+
+});
 function menuAnimations(){
   $('.toggleMenu, .mainNav a').on('click', function(){
     if ($('.fa-toggle-down, .fa-toggle-up').is(':visible')){
