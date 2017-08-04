@@ -87,6 +87,10 @@ var app = app || {};
       })
       .then(function(){
         $('.mainNav').find('[data-content=home]').click();
+        if ($('.fa-toggle-down, .fa-toggle-up').is(':visible')){
+          $('.mainNav').toggleClass('show');
+          $('.toggleMenu').toggleClass('fa-toggle-down').toggleClass('fa-toggle-up');
+        }
       });
     });
   };
