@@ -51,7 +51,6 @@ app.get('/users/:user_name', function(request,response){
     WHERE user_name = $1;`,
     [request.params.user_name]
   ).then(result => {
-    console.log(result);
     response.send(result.rows);
   });
 });
@@ -73,8 +72,10 @@ app.post('/saved_recipes', function(request, response) {
   client.query(
     `INSERT INTO saved_recipes
       (user_id, body)
-    VALUES
-      ($1,$2)
+    SELECT
+      $1
+      ,$2
+    WHERE $2 NOT IN (SELECT body FROM saved_recipes WHERE user_id = $1)
     ON CONFLICT DO NOTHING`,
     [request.body.user_id,request.body.body],
     function(err) {
