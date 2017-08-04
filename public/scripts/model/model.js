@@ -48,10 +48,16 @@ var app = app || {};
           let savedRecipes = results.map( (item) =>{
             return JSON.parse(item.body);
           });
-          console.log(savedRecipes);
-          savedRecipes.forEach(function(item){
-            $('section#home #recipes').append(Recipe.toHtml(item));
-          });
+          Recipe.all = [];
+          if (Recipe.all.length === 0){
+            Recipe.fetchRecipes();
+          } else {
+            $('.hrTry').find('span').text('Your Saved Recipes');
+            savedRecipes.forEach(function(item){
+              Recipe.all.push(item);
+            });
+            $('section#home #recipes').append(Recipe.toHtml(Recipe.all[0]));
+          }
         }
       );
   };
@@ -87,15 +93,7 @@ var app = app || {};
     Recipe.loadRecipes(recipes);
     $(location).empty();
     var onHome = location.search('#home');
-    if (localStorage.userName && onHome > -1){
-      $('#home .hrTry span').text('Your Saved Recipes');
-      Recipe.all.forEach(function(item){
-        $(location).append(Recipe.toHtml(item));
-      });
-    } else {
-      Recipe.initRecipe = Recipe.all[0];
-      $(location).append(Recipe.toHtml(Recipe.all[0]));
-    }
+    $(location).append(Recipe.toHtml(Recipe.all[0]));
   };
 
   Recipe.getNextRecipe = (e,location) => {
@@ -111,7 +109,6 @@ var app = app || {};
   };
 
   Recipe.discardRecipe = function(e,location){
-    console.log(Recipe.currentRecipe);
     Recipe.all.splice(Math.abs(Recipe.currentRecipe % Recipe.all.length), 1);
     $(e.target).closest('div').empty();
     $(location).append(Recipe.toHtml(Recipe.all[Math.abs(Recipe.currentRecipe % Recipe.all.length)]));
@@ -120,5 +117,13 @@ var app = app || {};
   Recipe.saveRecipe = function(){
   };
 
+  $(document).on('click', '.mainNav li', function(e){
+    if($(e.target).data('content') === 'home'){
+      Recipe.getSavedRecipies();
+    }
+    else if ($(e.target).data('content') === 'recipes') {
+      Recipe.all = [];
+    }
+  });
   module.Recipe = Recipe;
 })(app);
