@@ -44,3 +44,56 @@ img{
   border-radius: 10px;
   font-size: 30px;
 }
+
+.people {
+  width: auto;
+  max-width: 1200px;
+  margin: 10px auto;
+}
+
+.person {
+  width: 384px;
+  height: 300px;
+  background: white;
+  box-shadow: 10px 10px 5px -5px rgba(0,0,0,0.16);
+  margin-left: 1%;
+  margin-top: 10px;
+  display: inline-block;
+  position: relative;
+}
+
+.person-header {
+  background-image: url('assets/headers/david.jpg');
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  min-height: 100px;
+  border-bottom: 10px solid #4281A4;
+}
+
+.person-body {
+  margin-top: 70px;
+  text-align: center;
+}
+
+.person-headshot {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  border: 5px solid #4281A4;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-position: center;
+  margin-left: -50px;
+}
+
+.person h2 {
+  font-size: 25px;
+  font-family: 'Anton', sans-serif;
+  margin-bottom: 10px;
+}
+
+.person p {
+  margin-top: 2px;
+}
