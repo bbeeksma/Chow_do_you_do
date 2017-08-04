@@ -14,6 +14,16 @@ $(document).ready(function(){
   $(document).on('touchstart', '.recipe', handleTouchStart);
   $(document).on('touchmove', '.recipe', handleTouchMove);
 
+  $(document).on('click', '.mainNav li', function(e){
+    if($(e.target).data('content') === 'home'){
+      console.log('fire that shit');
+      app.Recipe.getSavedRecipies();
+    }
+    else if ($(e.target).data('content') === 'recipes') {
+      app.Recipe.all = [];
+    }
+  });
+
   $('#left-recipes').on('click', function(e){
     app.Recipe.getNextRecipe($(e.target).closest('div').next());
   });
