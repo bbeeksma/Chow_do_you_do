@@ -14,18 +14,28 @@ $(document).ready(function(){
   $(document).on('touchstart', '.recipe', handleTouchStart);
   $(document).on('touchmove', '.recipe', handleTouchMove);
 
+  $(document).on('click', '.mainNav li', function(e){
+    if($(e.target).data('content') === 'home'){
+      console.log('fire that shit');
+      app.Recipe.getSavedRecipies();
+    }
+    else if ($(e.target).data('content') === 'recipes') {
+      app.Recipe.all = [];
+    }
+  });
+
   $('#left-recipes').on('click', function(e){
-    app.Recipe.getNextRecipe($(e.target).closest('div').prev());
+    app.Recipe.getNextRecipe($(e.target).closest('div').next());
   });
   $('#right-recipes').on('click', function(e){
-    app.Recipe.getPreviousRecipe($(e.target).closest('div').prev());
+    app.Recipe.getPreviousRecipe($(e.target).closest('div').next());
   });
 
   $('#left-home').on('click', function(e){
-    app.Recipe.getNextRecipe($(e.target).closest('div').prev());
+    app.Recipe.getNextRecipe($(e.target).closest('div').next());
   });
   $('#right-home').on('click', function(e){
-    app.Recipe.getPreviousRecipe($(e.target).closest('div').prev());
+    app.Recipe.getPreviousRecipe($(e.target).closest('div').next());
   });
 
   $('#delete').on('click', function(e){
@@ -33,6 +43,7 @@ $(document).ready(function(){
     app.Recipe.deleteRecipe(JSON.stringify(app.Recipe.all[Math.abs(app.Recipe.currentRecipe % app.Recipe.all.length)]));
   });
   $('#save-recipes').on('click', function(e){
+    console.log(app.Recipe.all[Math.abs(app.Recipe.currentRecipe % app.Recipe.all.length)]);
     app.Recipe.saveRecipe(JSON.stringify(app.Recipe.all[Math.abs(app.Recipe.currentRecipe % app.Recipe.all.length)]));
   });
 

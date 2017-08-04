@@ -58,13 +58,13 @@ var app = app || {};
           let savedRecipes = results.map( (item) =>{
             return JSON.parse(item.body);
           });
-          Recipe.all = [];
-          if (Recipe.all.length === 0){
+          if (savedRecipes.length === 0){
+            $('.hrTry').find('span').text('Or Try These!');
             Recipe.fetchRecipes();
           } else {
             $('.hrTry').find('span').text('Your Saved Recipes');
-            savedRecipes.forEach(function(item){
-              Recipe.all.push(item);
+            Recipe.all = savedRecipes.map(function(item){
+              return item;
             });
             $('section#home #recipes').append(Recipe.toHtml(Recipe.all[0]));
           }
@@ -84,6 +84,9 @@ var app = app || {};
           user_id: result[0].user_id,
           body: bodyString
         }
+      })
+      .then(function(){
+        $('.mainNav').find('[data-content=home]').click();
       });
     });
   };
@@ -105,10 +108,11 @@ var app = app || {};
   };
 
   Recipe.loadRecipes = function(recipeResults){
-    Recipe.all = Recipe.scrambleArray(recipeResults).map(function(item){
+    let someRecipes = recipeResults.map(function(item){
       return new Recipe(item);
     });
 
+    Recipe.all = Recipe.scrambleArray(someRecipes);
   };
 
   Recipe.toHtml = function(recipe){
@@ -143,13 +147,5 @@ var app = app || {};
     $(location).append(Recipe.toHtml(Recipe.all[Math.abs(Recipe.currentRecipe % Recipe.all.length)]));
   };
 
-  $(document).on('click', '.mainNav li', function(e){
-    if($(e.target).data('content') === 'home'){
-      Recipe.getSavedRecipies();
-    }
-    else if ($(e.target).data('content') === 'recipes') {
-      Recipe.all = [];
-    }
-  });
   module.Recipe = Recipe;
 })(app);
