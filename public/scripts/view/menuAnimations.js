@@ -15,17 +15,17 @@ $(document).ready(function(){
   $(document).on('touchmove', '.recipe', handleTouchMove);
 
   $('#left-recipes').on('click', function(e){
-    app.Recipe.getNextRecipe($(e.target).closest('div').prev());
+    app.Recipe.getNextRecipe($(e.target).closest('div').next());
   });
   $('#right-recipes').on('click', function(e){
-    app.Recipe.getPreviousRecipe($(e.target).closest('div').prev());
+    app.Recipe.getPreviousRecipe($(e.target).closest('div').next());
   });
 
   $('#left-home').on('click', function(e){
-    app.Recipe.getNextRecipe($(e.target).closest('div').prev());
+    app.Recipe.getNextRecipe($(e.target).closest('div').next());
   });
   $('#right-home').on('click', function(e){
-    app.Recipe.getPreviousRecipe($(e.target).closest('div').prev());
+    app.Recipe.getPreviousRecipe($(e.target).closest('div').next());
   });
 
   $('#delete').on('click', function(e){
