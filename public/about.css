@@ -44,3 +44,24 @@ img{
   border-radius: 10px;
   font-size: 30px;
 }
+
+.person {
+    margin: 10px auto 10px auto;
+    position: relative;
+    max-width: 50%;
+    text-align: center;
+}
+
+.person img {
+  border: 1px solid white;
+}
+.person-info {
+  color: white;
+}
+
+.person-info h2 {
+  font-size: 25px;
+  margin: 5px;
+  color: #e6b89c;
+  font-family: 'Anton', sans-serif;
+}
