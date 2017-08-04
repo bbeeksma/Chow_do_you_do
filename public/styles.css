@@ -223,6 +223,39 @@ select{
 .save{
   font-family: 'Lobster', cursive;
 }
+.recipe-result-wrap, .home-recipe-result-wrap{
+  height: 580px;
+  width: 100%;
+  background-color: white;
+  overflow: auto;
+}
+.recipe-result{
+  width: 80%;
+  margin: auto;
+  align-items: center;
+  overflow: auto;
+}
+.recipe-result h2{
+  font-size: 40px;
+  font-family: 'Lobster', cursive;
+  color: #4281A4;
+  padding: 10px;
+  text-align: center;
+}
+.recipe-result li{
+  font-size: 20px;
+  font-family: 'Anton', sans-serif;
+  list-style: circle;
+  padding: 10px;
+  color: #E6B89C;
+}
+.recipe-result a{
+  color: #FE938C;
+}
+.recipe-result img{
+  display: block;
+  margin: auto;
+}
 /*---------------------MODULE-------------------------------*/
 nav a{
   color: #E6B89C;
@@ -350,7 +383,7 @@ nav a{
     border: 2px solid white;
     width: 60%;
     margin: auto;
-    height: 700px;
+    height: 850px;
   }
   legend{
     font-size: 40px;
