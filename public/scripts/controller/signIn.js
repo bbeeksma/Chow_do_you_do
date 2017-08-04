@@ -6,6 +6,8 @@ $(document).ready(function(){
     window.localStorage.setItem('userName', username);
     submitUser(username);
     $('.sign-in').hide();
+
+    $('.mainNav').find('[data-content=home]').click();
   });
   function submitUser (username) {
     $.post('/users',{user_name: username});

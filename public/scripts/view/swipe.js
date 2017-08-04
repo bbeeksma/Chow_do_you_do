@@ -22,13 +22,11 @@ function handleTouchMove(event) {
   if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
     if ( xDiff > 10 ) {
           /* left swipe */
-      console.log('swiped left');
       $(this).hide('slide', { direction: 'left' }, 200);
       //TODO:Get next recipe
       app.Recipe.getNextRecipe(event,$(event.target).closest('div'));
     } else if ( xDiff < -10 ) {
       /* right swipe */
-      console.log('swiped right');
       $(this).hide('slide', { direction: 'right' }, 200);
       //TODO:get previous recipe
       app.Recipe.getPreviousRecipe(event,$(event.target).closest('div'));

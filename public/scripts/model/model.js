@@ -52,6 +52,7 @@ var app = app || {};
           if (Recipe.all.length === 0){
             Recipe.fetchRecipes();
           } else {
+            $('.hrTry').find('span').text('Your Saved Recipes');
             savedRecipes.forEach(function(item){
               Recipe.all.push(item);
             });
@@ -116,16 +117,13 @@ var app = app || {};
   Recipe.saveRecipe = function(){
   };
 
-  $(document).ready(function(){
-    $(document).on('click', '.mainNav li', function(e){
-      if($(e.target).data('content') === 'home'){
-        Recipe.getSavedRecipies();
-      }
-      else if ($(e.target).data('content') === 'recipes') {
-        Recipe.all = [];
-      }
-    });
-    $('.mainNav').find('[data-content=home]').click();
+  $(document).on('click', '.mainNav li', function(e){
+    if($(e.target).data('content') === 'home'){
+      Recipe.getSavedRecipies();
+    }
+    else if ($(e.target).data('content') === 'recipes') {
+      Recipe.all = [];
+    }
   });
   module.Recipe = Recipe;
 })(app);
