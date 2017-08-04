@@ -73,7 +73,11 @@ var app = app || {};
   };
 
   Recipe.saveRecipe = (bodyString) => {
-    $.post('/saved_recipes', {user_name: window.localStorage.userName, body: bodyString});
+    console.log(window.localStorage.userName);
+    $.get(`/users/${window.localStorage.userName}`).then(result =>{
+      console.log(result[0].user_id);
+      $.post('/saved_recipes', {user_id: result[0].user_id, body: bodyString});
+    });
   };
 
  //returns ingredients as a list of <li> elements to append with the tmplate
@@ -123,9 +127,6 @@ var app = app || {};
     Recipe.all.splice(Math.abs(Recipe.currentRecipe % Recipe.all.length), 1);
     $(e.target).closest('div').empty();
     $(location).append(Recipe.toHtml(Recipe.all[Math.abs(Recipe.currentRecipe % Recipe.all.length)]));
-  };
-
-  Recipe.saveRecipe = function(){
   };
 
   $(document).on('click', '.mainNav li', function(e){

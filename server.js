@@ -44,12 +44,14 @@ app.get('/saved_recipes/:user_name', function(request,response){
 });
 
 app.get('/users/:user_name', function(request,response){
+  console.log(request.params);
   client.query(
     `SELECT user_id
     FROM users
     WHERE user_name = $1;`,
     [request.params.user_name]
   ).then(result => {
+    console.log(result);
     response.send(result.rows);
   });
 });
@@ -71,16 +73,10 @@ app.post('/saved_recipes', function(request, response) {
   client.query(
     `INSERT INTO saved_recipes
       (user_id, body)
-    SELECT
-      u.user_id
-      ,$2 AS body
-    FROM users u
-    LEFT JOIN saved_recipes s
-    ON u.user_id = s.user_id
-    WHERE user_name = $1
-    LIMIT 1
+    VALUES
+      ($1,$2)
     ON CONFLICT DO NOTHING`,
-    [request.body.user_name,request.body.body],
+    [request.body.user_id,request.body.body],
     function(err) {
       if (err) console.error(err);
     }

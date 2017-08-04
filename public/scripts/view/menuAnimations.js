@@ -20,8 +20,13 @@ $(document).ready(function(){
   $('#right-recipes').on('click', function(e){
     app.Recipe.getPreviousRecipe($(e.target).closest('div').prev());
   });
-});
 
+  $('#save-recipes').on('click', function(e){
+    console.log(JSON.stringify(app.Recipe.all[Math.abs(app.Recipe.currentRecipe % app.Recipe.all.length)]));
+    app.Recipe.saveRecipe(JSON.stringify(app.Recipe.all[Math.abs(app.Recipe.currentRecipe % app.Recipe.all.length)]));
+  });
+
+});
 function menuAnimations(){
   $('.toggleMenu, .mainNav a').on('click', function(){
     if ($('.fa-toggle-down, .fa-toggle-up').is(':visible')){
