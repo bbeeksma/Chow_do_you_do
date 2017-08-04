@@ -63,6 +63,14 @@ br{
   font-size: 60px;
   color: #EAD2AC;
 }
+button{
+  margin: auto auto;
+  color: white;
+  background-color: #FE938C;
+  border-radius: 10px;
+  padding: 20px 70px;
+  border: 2px solid ;
+}
 .button-wrap{
   display: flex;
   height: 200px;
@@ -203,6 +211,13 @@ select{
   font-size: 20px;
   background-color: #9CAFB7;
 }
+.leftRightWrap{
+  display: flex;
+  justify-content: space-around;
+}
+.leftRightWrap button{
+  font-size: 30px;
+}
 /*---------------------MODULE-------------------------------*/
 nav a{
   color: #E6B89C;
@@ -231,6 +246,9 @@ nav a{
 .hideMobile{
   max-height: 0px;
   overflow: hidden;
+}
+.showFull{
+  display: none;
 }
 @media (min-width: 600px){
   header{
@@ -323,6 +341,12 @@ nav a{
     float: right;
     height: 700px;
   }
+  .home-recipe-result-wrap{
+    border: 2px solid white;
+    width: 60%;
+    margin: auto;
+    height: 700px;
+  }
   legend{
     font-size: 40px;
   }
@@ -332,5 +356,8 @@ nav a{
   .hideMobile{
     max-height: none;
     overflow: hidden;
+  }
+  .showFull{
+    display: inline;
   }
 }
