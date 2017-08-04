@@ -68,7 +68,6 @@ button{
   color: white;
   background-color: #FE938C;
   border-radius: 10px;
-  padding: 20px 70px;
   border: 2px solid ;
 }
 .button-wrap{
@@ -199,7 +198,7 @@ legend{
 #recipe-search{
   font-family: 'Lobster', cursive;
   font-size: 30px;
-  margin: auto auto;
+  margin:10px auto;
   color: white;
   background-color: #FE938C;
   border-radius: 10px;
@@ -217,6 +216,9 @@ select{
 }
 .leftRightWrap button{
   font-size: 30px;
+}
+.left, .right, .save{
+  width: 25%;
 }
 /*---------------------MODULE-------------------------------*/
 nav a{
