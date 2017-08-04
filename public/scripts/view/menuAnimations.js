@@ -16,7 +16,6 @@ $(document).ready(function(){
 
   $(document).on('click', '.mainNav li', function(e){
     if($(e.target).data('content') === 'home'){
-      console.log('fire that shit');
       app.Recipe.getSavedRecipies();
     }
     else if ($(e.target).data('content') === 'recipes') {
