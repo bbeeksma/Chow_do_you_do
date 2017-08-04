@@ -13,6 +13,9 @@ $(document).ready(function(){
 
   $(document).on('touchstart', '.recipe', handleTouchStart);
   $(document).on('touchmove', '.recipe', handleTouchMove);
+
+  $('#left-recipe').on('click', console.log('stuf')); //app.Recipe.getNextRecipe(event,$(event.target).closest('div')));
+  $('#right-recipe').on('click', console.log('stuf')); //app.Recipe.getPreviousRecipe(event,$(event.target).closest('div')));
 });
 
 function menuAnimations(){

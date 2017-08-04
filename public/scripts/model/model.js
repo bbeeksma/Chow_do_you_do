@@ -107,15 +107,15 @@ var app = app || {};
     $(location).append(Recipe.toHtml(Recipe.all[0]));
   };
 
-  Recipe.getNextRecipe = (e,location) => {
+  Recipe.getNextRecipe = (location) => {
     Recipe.currentRecipe++;
-    $(e.target).closest('div').empty();
+    $(location).empty();
     $(location).append(Recipe.toHtml(Recipe.all[Math.abs(Recipe.currentRecipe % Recipe.all.length)]));
   };
 
-  Recipe.getPreviousRecipe = function(e,location){
+  Recipe.getPreviousRecipe = function(location){
     Recipe.currentRecipe--;
-    $(e.target).closest('div').empty();
+    $(location).empty();
     $(location).append(Recipe.toHtml(Recipe.all[Math.abs(Recipe.currentRecipe % Recipe.all.length)]));
   };
 

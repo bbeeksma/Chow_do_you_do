@@ -24,12 +24,12 @@ function handleTouchMove(event) {
           /* left swipe */
       $(this).hide('slide', { direction: 'left' }, 200);
       //TODO:Get next recipe
-      app.Recipe.getNextRecipe(event,$(event.target).closest('div'));
+      app.Recipe.getNextRecipe($(event.target).closest('div'));
     } else if ( xDiff < -10 ) {
       /* right swipe */
       $(this).hide('slide', { direction: 'right' }, 200);
       //TODO:get previous recipe
-      app.Recipe.getPreviousRecipe(event,$(event.target).closest('div'));
+      app.Recipe.getPreviousRecipe($(event.target).closest('div'));
     }
   }
 /*
