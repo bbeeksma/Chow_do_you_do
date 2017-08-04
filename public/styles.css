@@ -76,7 +76,7 @@ button{
   width: 100%;
 }
 .getRecipes{
-  font-family: 'Lobster', cursive;
+  font-family: 'Lobster Two', cursive;
   font-size: 30px;
   margin: auto auto;
   color: white;
@@ -112,7 +112,7 @@ nav li{
 }
 .hrTry {
   display: block;
-  font-family: 'Lobster', cursive;
+  font-family: 'Lobster Two', cursive;
   color: #E6B89C;
   text-align: center;
   overflow: hidden;
@@ -161,7 +161,7 @@ nav li{
   margin: 30px 20px;
 }
 .formChoice{
-  font-family: 'Lobster', cursive;
+  font-family: 'Lobster Two', cursive;
   color: #E6B89C;
   font-size: 35px;
   float: right;
@@ -190,13 +190,13 @@ nav li{
   display: none;
 }
 legend{
-  font-family: 'Lobster', cursive;
+  font-family: 'Lobster Two', cursive;
   color: #E6B89C;
   font-size: 25px;
   padding: 10px 0px;
 }
 #recipe-search{
-  font-family: 'Lobster', cursive;
+  font-family: 'Lobster Two', cursive;
   font-size: 30px;
   margin:10px auto;
   color: white;
@@ -221,7 +221,7 @@ select{
   width: 25%;
 }
 .save{
-  font-family: 'Lobster', cursive;
+  font-family: 'Lobster Two', cursive;
 }
 .recipe-result-wrap, .home-recipe-result-wrap{
   height: 580px;
@@ -237,17 +237,17 @@ select{
 }
 .recipe-result h2{
   font-size: 40px;
-  font-family: 'Lobster', cursive;
+  font-family: 'Lobster Two', cursive;
   color: #4281A4;
   padding: 10px;
   text-align: center;
 }
 .recipe-result li{
   font-size: 20px;
-  font-family: 'Anton', sans-serif;
+  font-family: 'Vidaloka', serif;
   list-style: circle;
   padding: 10px;
-  color: #E6B89C;
+  color: #4281A4;
 }
 .recipe-result a{
   color: #FE938C;
@@ -336,7 +336,7 @@ nav a{
     border: none;
   }
   .getRecipes{
-    font-family: 'Lobster', cursive;
+    font-family: 'Lobster Two', cursive;
     font-size: 45px;
     margin: auto auto;
     color: white;
